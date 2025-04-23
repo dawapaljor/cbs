@@ -11,6 +11,8 @@ const docs = getDocs.map(n => ({
   slug: n.frontmatter.slug,
   Content: n.Content,
 }));
+
+
 ---
 <!-- {
 	docs.map(({ title,slug, Content }) => (
@@ -19,14 +21,14 @@ const docs = getDocs.map(n => ({
 	))
  }   -->
 
-<div class="max-w-screen mx-auto px-4 py-8">
+<div class="container mx-auto px-4 py-8">
 
  {
 	docs.map(({ title,slug, Content }) => (
-	<div class="flex">
+	<div class="flex box">
     <!-- First Column - Heading -->
-    <div class="w-1/4  top-0 h-screen flex items-center font-primary bg-sky-100 panel" id="sticky">
-      <h1 class="text-4xl sticky font-bold text-gray-800" id={slug}>{title}</h1>
+    <div class="w-1/4  top-0 h-screen flex  items-start font-primary panel" id="sticky">
+      <h1 class="text-5xl sticky font-bold text-gray-800 uppercase pt-10" id={slug}>{title}</h1>
     </div>
     
     <div class="w-3/4 pl-8">
@@ -46,6 +48,45 @@ const docs = getDocs.map(n => ({
 
 <script>
 import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
+let boxes = gsap.utils.toArray(".box") as HTMLElement[];
+
+boxes.forEach((box, i) => {
+  const slug = box.querySelector('h1')?.id;
+  if (slug) {
+    const targetElement = document.querySelector(`#${slug}`);
+    const heading = box.querySelector('h1');
+    
+    // Create a timeline for the box
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: box,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        markers: true
+      }
+    });
+
+    // Fade out the heading when scrolling
+    tl.to(heading, {
+      opacity: 0,
+      duration: 0.5
+    });
+
+    // Pin the target element
+    gsap.to(box, {
+      scrollTrigger: {
+        trigger: box,
+        start: "bottom bottom",
+        end: "bottom top",
+        pin: targetElement,
+        markers: true
+      }
+    });
+  }
+});
 </script>
