@@ -1,0 +1,36 @@
+---
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body>
+		<div class="h-1/2 max-w-screen flex items-center justify-center bg-amber-100">
+			<div class="flex items-center justify-center flex-col">
+				<h1 class="text-4xl uppercase font-extrabold">When They Came to Take Our Children</h1>
+				<h2 class="text-2xl font-bold">China’s Colonial Boarding Schools and the Future of Tibet</h2>
+				<p>Tibet Action Institute</p>
+			</div>
+		</div>
+		<slot />
+		<Footer/>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>

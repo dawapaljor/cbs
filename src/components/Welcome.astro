@@ -1,0 +1,51 @@
+---
+import astroLogo from '../assets/astro.svg';
+import background from '../assets/background.svg';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import QuotePrimary from './widgets/QuotePrimary.astro';
+
+const getDocs = await Astro.glob(`../content/docs/*.mdx`)
+const docs = getDocs.map(n => ({
+  title: n.frontmatter.title,
+  slug: n.frontmatter.slug,
+  Content: n.Content,
+}));
+---
+<!-- {
+	docs.map(({ title,slug, Content }) => (
+		<h2 class="" id={slug}>{title}</h2>
+		<Content class="pt-10" />
+	))
+ }   -->
+
+<div class="max-w-screen mx-auto px-4 py-8">
+
+ {
+	docs.map(({ title,slug, Content }) => (
+	<div class="flex">
+    <!-- First Column - Heading -->
+    <div class="w-1/4  top-0 h-screen flex items-center font-primary bg-sky-100 panel" id="sticky">
+      <h1 class="text-4xl sticky font-bold text-gray-800" id={slug}>{title}</h1>
+    </div>
+    
+    <div class="w-3/4 pl-8">
+      <div class="space-y-8">
+        <section class="py-12">
+         <div class="text-gray-600 text-lg">
+			<Content/>
+		 </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+	))
+ } 
+</div>
+
+<script>
+import { gsap } from "gsap";
+gsap.registerPlugin(ScrollTrigger);
+
+</script>
