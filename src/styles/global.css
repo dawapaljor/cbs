@@ -4,17 +4,23 @@
 @font-face {
     font-family: Helveticabold;
     font-display: swap;
-    src: url("/fonts/Helvetica-Bold.ttf") format("ttf");
+    src: url("/fonts/Helvetica-Bold.woff2") format("woff");
 }
 @font-face {
     font-family: Helvetica;
     font-display: swap;
-    src: url("/fonts/Helvetica.ttf") format("ttf");
+    src: url("/fonts/Helvetica.woff2") format("woff");
+}
+@font-face {
+    font-family: Helveticacompressed;
+    font-display: swap;
+    src: url("./fonts/helvetica-compressed.woff2") format("woff");
 }
 
 @theme {
-    --font-primary: "Helveticabold", "sans-serif";
-    --font-secondary: "Helvetica", "sans-serif";   
+    --font-primary: "Helveticabold", "san-serif";
+    --font-secondary: "Helvetica", "sans-serif";  
+    --font-tertiary: "Helveticacompressed", "sans-serif"; 
 }
 
 p{padding:10px}
