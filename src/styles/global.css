@@ -16,11 +16,17 @@
     font-display: swap;
     src: url("./fonts/helvetica-compressed.woff2") format("woff");
 }
+@font-face {
+    font-family: HelveticLight;
+    font-display: swap;
+    src: url("./fonts/helvetica-light.woff2") format("woff");
+}
 
 @theme {
-    --font-primary: "Helveticabold", "san-serif";
-    --font-secondary: "Helvetica", "sans-serif";  
-    --font-tertiary: "Helveticacompressed", "sans-serif"; 
+    --font-Helv-Bold: "Helveticabold", "san-serif";
+    --font-Helv-Normal: "Helvetica", "sans-serif";  
+    --font-Helv-Compressed: "Helveticacompressed", "sans-serif"; 
+    --font-Helv-Light: "Helveticalight", "sans-serif"; 
 }
 
 p{padding:10px}

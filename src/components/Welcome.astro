@@ -27,14 +27,14 @@ const docs = getDocs.map(n => ({
 	docs.map(({ title,slug, Content }) => (
 	<div class="flex box">
     <!-- First Column - Heading -->
-    <div class="w-2/6  top-0 h-screen flex  items-start   panel" id="sticky">
-      <h1 class="text-6xl sticky font-primary text-gray-800 uppercase pt-10" id={slug}>{title}</h1>
+    <div class="w-2/6  top-0 h-screen flex  items-start panel " id="sticky">
+      <h1 class="text-6xl sticky font-primary font-extrabold text-gray-800 uppercase p-10 border-l-4" id={slug}>{title}</h1>
     </div>
     
     <div class="w-4/6 pl-8 font-secondary">
       <div class="space-y-8">
-        <section class="py-12">
-         <div class="text-gray-600 text-lg">
+        <section class="p-10">
+         <div class="text-gray-600 text-lg ">
 			      <Content/>
 		    </div>
         </section>
@@ -62,8 +62,8 @@ boxes.forEach((box, i) => {
       duration: 1,
       scrollTrigger: {
         trigger: box,
-        start: "100px 50%",
-        end: "bottom 50%",
+        start: "100px center",
+        end: "bottom center",
         pin: targetElement,
         markers: true
       }
