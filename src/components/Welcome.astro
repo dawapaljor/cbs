@@ -27,7 +27,7 @@ const docs = getDocs.map(n => ({
 	docs.map(({ title,slug, Content }) => (
 	<div class="flex box">
     <!-- First Column - Heading -->
-    <div class="w-2/6  top-0 h-screen flex  items-start font-primary bg-sky-100 panel" id="sticky">
+    <div class="w-2/6  top-0 h-screen flex  items-start font-primary  panel" id="sticky">
       <h1 class="text-5xl sticky font-bold text-gray-800 uppercase pt-10" id={slug}>{title}</h1>
     </div>
     
@@ -64,7 +64,7 @@ boxes.forEach((box, i) => {
         trigger: box,
         
         start: "bottom bottom",
-        end: "bottom top",
+        end: "bottom 10%",
         pin: targetElement,
         markers: true
       }
