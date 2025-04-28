@@ -1,0 +1,42 @@
+---
+import { onMount } from 'astro/client';
+import 'video.js/dist/video-js.css';
+
+let videoEl;
+---
+
+<video
+  id="my-video"
+  class="video-js vjs-default-skin"
+  controls
+  preload="auto"
+  width="640"
+  height="360"
+  data-setup='{}'
+  ref={el => (videoEl = el)}
+></video>
+
+<script type="module">
+  import videojs from 'video.js';
+  import 'videojs-youtube';
+
+  onMount(() => {
+    const player = videojs(videoEl, {
+      techOrder: ["youtube"],
+      sources: [{
+        type: "video/youtube",
+        src: "https://www.youtube.com/watch?v=d2HM8qZ4TKQ",
+      }],
+      youtube: {
+        modestbranding: 1,
+        rel: 0,
+      }
+    });
+
+    return () => {
+      if (player) {
+        player.dispose();
+      }
+    };
+  });
+</script>

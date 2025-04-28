@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import VideoPlayer from '../components/widgets/VideoPlayer.astro';
 ---
 
 
@@ -10,6 +11,7 @@ import "../styles/global.css";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link type="text/css" rel="stylesheet" href="../node_modules/video.js/dist/video-js.min.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
@@ -20,6 +22,7 @@ import "../styles/global.css";
 				<h1 class="text-7xl uppercase font-bold text-slate-50">When They Came to Take Our Children</h1>
 				<h2 class="text-2xl font-bold text-slate-50">China’s Colonial Boarding Schools and the Future of Tibet</h2>
 				<p>Tibet Action Institute</p>
+				<VideoPlayer/>
 			</div>
 		</div>
 		<slot />

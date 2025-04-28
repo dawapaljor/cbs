@@ -11,8 +11,11 @@
   "dependencies": {
     "@astrojs/mdx": "^4.2.4",
     "@tailwindcss/vite": "^4.1.4",
+    "@videojs/http-streaming": "^3.17.0",
     "astro": "^5.7.4",
     "gsap": "^3.12.7",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "video.js": "^8.22.0",
+    "videojs-youtube": "^3.0.1"
   }
 }
