@@ -16,13 +16,14 @@ import VideoPlayer from '../components/widgets/VideoPlayer.astro';
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<div class="h-1/2 max-w-screen flex items-center justify-center bg-[url('/banner.png')]  relative bg-fixed ">
-			<div class="w-full h-full bg-gradient-to-t from-[#0f172a]  to-[#334155]/20 absolute  z-0"></div>
+		<div class="h-1/2 max-w-screen flex items-center justify-center bg-[url('/xx-in-tibetan-school.jpg')] bg-contain relative bg-fixed ">
+			<div class="w-full h-full bg-gradient-to-t from-[#ffffff]  to-[#334155]/20 absolute  z-0"></div>
 			<div class="flex items-center justify-center flex-col z-0">
-				<h1 class="text-7xl uppercase font-bold text-slate-50">When They Came to Take Our Children</h1>
-				<h2 class="text-2xl font-bold text-slate-50">China’s Colonial Boarding Schools and the Future of Tibet</h2>
-				<p>Tibet Action Institute</p>
-				<VideoPlayer/>
+				<h1 class="text-6xl uppercase font-bold text-slate-900 bg-white/50 backdrop-blur-xl p-5">When They Came to Take Our Children</h1>
+				<h2 class="text-2xl font-bold text-slate-900 p-5 bg-white/50 backdrop-blur-xl">China’s Colonial Boarding Schools and the Future of Tibet</h2>
+				<p class="  text-slate-950 bg-white/50 backdrop-blur-xl">Report By</p>
+				<p class="text-white"><img src="tai-logo.png" class="w-50"/></p>
+				
 			</div>
 		</div>
 		<slot />

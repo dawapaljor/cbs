@@ -4,11 +4,13 @@ import background from '../assets/background.svg';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import QuotePrimary from './widgets/QuotePrimary.astro';
+import { makeIssue } from 'astro:schema';
 
 const getDocs = await Astro.glob(`../content/docs/*.mdx`)
 const docs = getDocs.map(n => ({
   title: n.frontmatter.title,
   slug: n.frontmatter.slug,
+  featuredImage: n.frontmatter.featuredImage,
   Content: n.Content,
 }));
 
@@ -24,13 +26,12 @@ const docs = getDocs.map(n => ({
 <div class="max-w-screen mx-auto px-4 py-8">
 
  {
-	docs.map(({ title,slug, Content }) => (
+	docs.map(({ title,slug,featuredImage, Content }) => (
 	<div class="flex box">
     <!-- First Column - Heading -->
-    <div class="w-2/6  top-0 h-screen flex  items-start panel " id="sticky">
-      <h1 class="text-6xl sticky font-primary font-extrabold text-gray-800 uppercase p-10 border-l-4" id={slug}>{title}</h1>
+    <div class="w-2/6  top-0 h-screen flex  items-start panel  " id="sticky">
+      <h1 class="text-6xl sticky font-primary font-extrabold  uppercase p-10 border-l-4 text-rose-600" id={slug}>{title}</h1>
     </div>
-    
     <div class="w-4/6 pl-8 font-secondary">
       <div class="space-y-8">
         <section class="p-10">
