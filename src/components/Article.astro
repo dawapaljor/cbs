@@ -27,9 +27,10 @@ const docs = getDocs.map(n => ({
 
  {
 	docs.map(({ title,slug,featuredImage, Content }) => (
-	<div class="flex box">
+	// <div class="flex box   " style=`background:url(${featuredImage}); background-repeat: no-repeat; background-size: cover; background-attachment:fixed`>
+  <div class="flex box">
     <!-- First Column - Heading -->
-    <div class="w-2/6  top-0 h-screen flex  items-start panel  " id="sticky">
+    <div class="w-2/6  top-0 h-screen flex  items-start panel " id="sticky">
       <h1 class="text-6xl sticky font-primary font-extrabold  uppercase p-10 border-l-4 text-red-500" id={slug}>{title}</h1>
     </div>
     <div class="w-4/6 pl-8 font-secondary">
