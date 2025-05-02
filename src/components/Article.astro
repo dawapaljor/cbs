@@ -31,7 +31,7 @@ const docs = getDocs.map(n => ({
   <div class="flex box">
     <!-- First Column - Heading -->
     <div class="w-2/6  top-0 h-screen flex  items-start panel " id="sticky">
-      <h1 class="text-6xl sticky font-primary font-extrabold  uppercase p-10 border-l-4 text-neutral-800" id={slug}>{title}</h1>
+      <h1 class="text-6xl sticky font-primary font-extrabold  uppercase p-10 pb-20 border-l-4 text-neutral-800 opacity-20" id={slug}>{title}</h1>
     </div>
     <div class="w-4/6 pl-8 font-secondary">
       <div class="space-y-8">
@@ -59,6 +59,23 @@ boxes.forEach((box, i) => {
   const slug = box.querySelector('h1')?.id;
   if (slug) {
     const targetElement = document.querySelector(`#${slug}`);
+    const heading = box.querySelector('h1');
+    
+    // Initial state
+    gsap.set(heading, { opacity: 1 });
+    
+    // Scroll animation
+    gsap.to(heading, {
+      opacity: 0.2,
+      scrollTrigger: {
+        trigger: box,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        markers: true
+      }
+    });
+
     gsap.to(box, {
       duration: 1,
       scrollTrigger: {
