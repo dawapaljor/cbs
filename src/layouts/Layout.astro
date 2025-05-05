@@ -17,6 +17,7 @@ import BannerTriangle from "../components/BannerTriangle.astro"
 		<link type="text/css" rel="stylesheet" href="../node_modules/video.js/dist/video-js.min.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<link href="https://vjs.zencdn.net/8.22.0/video-js.css" rel="stylesheet" />
 		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 	</head>
 	<body>
@@ -24,6 +25,7 @@ import BannerTriangle from "../components/BannerTriangle.astro"
 		<!-- <BannerFull/> -->
 		<slot />
 		<Footer/>
+		<script src="https://vjs.zencdn.net/8.22.0/video.min.js"></script>
 	</body>
 </html>
 

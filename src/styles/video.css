@@ -1,0 +1,16 @@
+
+.vjs-theme-fantasy .vjs-big-play-button{
+    color:rgb(15 23 42);
+    font-size:150px;
+    width:100px;
+    height:100px;
+  }
+
+
+
+video:hover .vjs-theme-fantasy .vjs-big-play-button {
+    color:red;
+  }
+  .vjs-theme-fantasy .vjs-play-progress, .vjs-theme-fantasy .vjs-play-progress:before{
+    background-color:rgb(15 23 42)
+  }
