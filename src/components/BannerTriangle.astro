@@ -1,12 +1,19 @@
 <div class="h-screen bg-[url('/banner.png')] bg-contain relative bg-fixed flex  justify-baseline items-end">
     <div class="w-full h-screen  z-0 bg-black/80 absolute backdrop-blur-md"></div>
     <img src="/triangle.svg" alt="" class="absolute" >
-    <img src="/triangle-black.svg" alt="" class="absolute" id="triangle-black">
+    <img src="/triangle-orange.svg" alt="" class="absolute" id="triangle-orange">
     <div class="flex-col z-0 p-20 justify-baseline items-baseline  w-1/2">
         <h1 class="text-7xl uppercase font-extrabold text-neutral-900  p-5 opacity-0" id="banner-title">When They Came to Take Our Children</h1>
         <h2 class="text-2xl font-bold text-neutral-900 px-5 opacity-0" id="banner-subtitle">China's Colonial Boarding Schools and the Future of Tibet</h2>
         <!-- <p class="  text-neutral-900 opacity-0 " id="banner-by">Report By</p> -->
         <p class="text-neutral-900 opacity-0" id="banner-logo"><img src="tai-logo.png" class="w-50"/></p>
+        <br>
+       <p>
+        <a href="#" class="text-md  p-3  text-slate-600  font-bold  items-center  z-10 ">
+            <span class="px-2 border-b-4">Download The Full Report</span>
+            
+        </a>
+       </p>
     </div>
     <a href="#" class="text-md bg-amber-300  top-0 left-15 p-3 pt-10 text-white  font-bold flex items-center fixed shadow-md z-10">
         <span class="px-2">DONATE NOW</span>
@@ -28,14 +35,15 @@
     const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
     // Animate triangles sliding in from top
-    tl.fromTo("#triangle, #triangle-black",
+    tl.fromTo("#triangle, #triangle-orange",
         { y: -1000, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.5 }
+        { y: 0, opacity: 1, duration: 1 }
     )
     // Animate the title and subtitle
     .fromTo("#banner-title", 
         { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 }
+        { y: 0, opacity: 1, duration: 1 },
+        "<"
     )
     .fromTo("#banner-subtitle",
         { y: 50, opacity: 0 },
@@ -67,7 +75,7 @@
         tl.fromTo(`#${img.id}`,
             { x: img.x, y: img.y, opacity: 0, rotation: img.x > 0 ? 20 : -20 },
             { x: 0, y: 0, opacity: 1, rotation: 0, duration: 1 },
-            `-=${0.8 - (index * 0.1)}`
+            `-=${0.4 - (index * 0.05)}`
         );
     });
 </script>

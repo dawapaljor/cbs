@@ -4,23 +4,16 @@ import 'video.js/dist/video-js.css';
 import '@videojs/themes/dist/city/index.css';
 // Fantasy --------- in use now
 import '@videojs/themes/dist/fantasy/index.css';
-
-import '../../styles/video.css'
+import '../../styles/video.css';
 // Forest
 import '@videojs/themes/dist/forest/index.css';
 // Sea
 import '@videojs/themes/dist/sea/index.css';
-
 const {src} = Astro.props
 ---
 <div class="flex justify-center items-center">
-  <video  controls class="w-full sm:w-52 md:max-w-screen-md lg:w-full  h-56 sm:h-56 md:h-[450px] lg:h-[450px] video-js vjs-theme-fantasy" data-setup="{}">
+  <video  controls class="w-full sm:w-52 md:max-w-screen-md lg:w-full  h-56 sm:h-56 md:h-[450px] lg:h-[450px] video-js vjs-theme-city " poster="xx-in-tibetan-school.jpg" data-setup="{}" >
     <source src={src} type="video/mp4"/>
     Your browser does not support the video tag.
-    <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
   </video>
-
 </div>
-

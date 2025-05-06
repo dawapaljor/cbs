@@ -1,9 +1,9 @@
+
+
+
 @import "tailwindcss";
 @import "video.js";
-
-
-
-
+@import "@videojs/themes/dist/city/index.css";
 
 
 @font-face {
