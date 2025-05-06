@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import FooterSingleCol from "../components/Footer-Col-1.astro";
 import "../styles/global.css";
 
 import { ClientRouter } from "astro:transitions";
@@ -27,7 +28,8 @@ import BannerTriangle from "../components/BannerTriangle.astro"
 		<BannerTriangle/>
 		<!-- <BannerFull/> -->
 		<slot />
-		<Footer/>
+		<FooterSingleCol/>
+		<!-- <Footer/> -->
 	
 	</body>
 </html>

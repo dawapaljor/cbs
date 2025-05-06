@@ -4,12 +4,16 @@
   <defs>
     <style>
       .st0 {
-        fill: #515254;
+        fill: #fac31e;
         fill-rule: evenodd;
+      }
+
+      .st1 {
+        isolation: isolate;
       }
     </style>
   </defs>
   <polygon class="st0" points="1490.1 854.6 80.6 854.6 1491.5 93.6 1490.1 854.6"/>
   <polygon class="st0" points="59.7 839.3 1487.3 81.6 1482.5 67.6 54.9 825.3 59.7 839.3"/>
-  <image width="45" height="84" transform="translate(-87.5 114.9)" xlink:href="traingle-Footer-1.png"/>
+  <image class="st1" width="46" height="85" transform="translate(-87.7 115) scale(1)" xlink:href="traingle-Footer-1.png"/>
 </svg>
