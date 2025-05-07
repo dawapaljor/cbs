@@ -32,12 +32,9 @@
     --font-Helv-Normal: "Helvetica", "sans-serif";  
     --font-Helv-Compressed: "Helveticacompressed", "sans-serif"; 
     --font-Helv-Light: "Helveticalight", "sans-serif"; 
+};
 
-
-  
-}
-
-p{padding:10px}
+p{padding:10px;}
 
 
 section li{

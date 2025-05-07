@@ -7,6 +7,7 @@ import { ClientRouter } from "astro:transitions";
 
 import BannerFull from "../components/BannerFull.astro"
 import BannerTriangle from "../components/BannerTriangle.astro"
+import Navbar from "../components/Navbar.astro";
 ---
 
 
@@ -29,7 +30,9 @@ import BannerTriangle from "../components/BannerTriangle.astro"
 		<!-- <BannerFull/> -->
 		<slot />
 		<!-- <FooterSingleCol/> -->
+		<Navbar/>
 		<Footer/>
+		
 	
 	</body>
 </html>

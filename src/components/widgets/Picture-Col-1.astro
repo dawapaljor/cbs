@@ -2,6 +2,33 @@
 const {src} = Astro.props;
 ---
 
-<div class="w-full flex justify-center items-center p-2">
+<div class="w-full flex flex-col justify-center items-center p-2" id="gsap-picture-col-1">
     <slot/>
 </div>
+
+<script >
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const el = document.getElementById('gsap-picture-col-1');
+  if (el) {
+    gsap.fromTo(
+      el,
+      { opacity: 0, scale: 0.8, x: -100 },
+      {
+        opacity: 1,
+        scale: 1,
+        x: 0,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+          end: 'bottom 60%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }
+</script>

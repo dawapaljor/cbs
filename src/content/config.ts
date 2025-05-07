@@ -8,7 +8,7 @@ const docs = defineCollection({
     title: z.string(),
     // author: z.string(),
     // date: z.date(),
-    featuredImage: z.boolean(),
+    featuredImage: z.string().optional(),
     draft: z.boolean().optional(),
   }),
 });

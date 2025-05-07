@@ -1,0 +1,82 @@
+---
+import BurgerMenu from "../components/icons/burger-list-menu-navigation-svgrepo-com.astro"
+
+const {title} = Astro.props;
+
+const menuItems = [
+  { name: "Introduction", href: "#introduction" },
+  { name: "Methodology", href: "#methodology" },
+  { name: "Legal Violations", href: "/blog" },
+  { name: "What is Tibet and Who is Tibetan?", href: "/contact" },
+  { name: "Abuse and Negligence in Boarding School", href: "/" },
+  { name: "Preschool Boarders", href: "/" },
+  { name: "Removing Children from Cultural Influences", href: "/" },
+  { name: "No Choice for Parents", href: "/" },
+  { name: "Beijing’s Campaign of Forced Assimilation", href: "/" },
+  { name: "Psychological and Emotional Harm", href: "/" },
+  { name: "From Colonial Ideology to Racist Policies", href: "/" },
+  { name: "Tibetan Resistance", href: "/" },
+  { name: "Recommendations", href: "/" },
+];
+
+---
+<!-- drawer init and show -->
+<div class="text-center  bottom-5 right-5 fixed z-40"  data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+    <button class=" text-white bg-slate-700/40 hover:bg-slate-800 focus:ring-4   rounded-lg text-sm px-2.5 py-2.5 dark:bg-neutral-600 dark:hover:bg-neutral-700 focus:outline-none  transition-transform" >
+        <BurgerMenu /> 
+        
+    </button>
+ </div>
+ 
+ <!-- drawer component -->
+ <div id="drawer-navigation" class="block fixed bottom-0 left-0 z-40 w-full   overflow-y-auto transition-transform -translate-x-full bg-neutral-900/50 backdrop-blur-md dark:bg-neutral-900/90" tabindex="-1" aria-labelledby="drawer-navigation-label">
+     <!-- <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5> -->
+     <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+         <svg aria-hidden="true" class="w-10 h-10 fill-yellow-400 hover:fill-yellow-300" fill="" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd">
+            </path>
+        </svg>
+         <span class="sr-only">Close menu</span>
+     </button>
+   <div class="overflow-y-auto font-oswald uppercase text-md ">
+       <ul class=" text-amber-400 flex flex-col items-center justify-center text-3xl font-Helv-Normal h-dvh">
+          <!-- <li class="py-2  ms-0">
+            {title == "Introduction" ? 
+            (<p  class="flex items-center p-2  group text-slate-400 border-l-4 px-2 border-x-yellow-500 ">Introduction</p>) : 
+            (<a href="/page/introduction" class="hover:text-slate-400">Introduction</a>)
+            }  
+          </li>
+          <li class="py-2  ms-0  ">
+            {title == "Background" ? 
+            (<p  class="flex items-center p-2  group text-slate-400 border-l-4 px-2 border-x-yellow-500 ">{title}</p>) : 
+            (<a href="/page/background" class="hover:text-slate-400">Background</a>)
+            } 
+           
+                
+          <li class="py-2  ms-0  ">
+                {title == "Voices From The Community" ? 
+                (<p  class="flex items-center   group text-slate-400 border-l-4 px-2 border-x-yellow-500  ">Voices From The Community</p>) : 
+                (<a href="/page/voices-from-the-community/" class="hover:text-slate-400">Voices From The Community</a>)
+                }         
+          </li>
+
+          <li class="py-2  ms-0">
+            {title == "The Community Responds" ? 
+            (<p  class="flex items-center  text-slate-400  whitespace-nowrap border-l-4 px-2 border-x-yellow-500 ">The Community Responds</p>) : 
+            (<a href="/page/the-community-responds/" class="whitespace-nowrap hover:text-slate-400">The Community Responds</a>)
+           }
+          </li>
+          --> 
+
+          {
+            menuItems.map((item) => (
+              <li class="py-2  ms-0 hover:text-amber-500">
+                <a href={item.href}>{item.name}</a>
+            </li>
+            ))
+          }
+            
+       </ul>
+    </div>
+ </div>
+ 
