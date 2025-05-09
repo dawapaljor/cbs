@@ -32,7 +32,7 @@
     --font-Helv-Normal: "Helvetica", "sans-serif";  
     --font-Helv-Compressed: "Helveticacompressed", "sans-serif"; 
     --font-Helv-Light: "Helveticalight", "sans-serif"; 
-};
+}
 
 p{padding:10px;}
 
@@ -48,4 +48,10 @@ section ol{
 section h2{
     font-size: 20px;
     font-weight: bold;
+}
+
+
+#img1{
+    top:0;
+    position:absolute;
 }

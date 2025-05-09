@@ -30,7 +30,7 @@ const docs = getDocs.map(n => ({
 	// <div class="flex box   " style=`background:url(${featuredImage}); background-repeat: no-repeat; background-size: cover; background-attachment:fixed`>
     <div class="banner w-screen h-screen  bg-[url()] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
       <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center ">
-      <h1 class=" text-9xl uppercase font-Helv-Bold text-white  ">{title}</h1>
+      <h1 class=" text-9xl uppercase font-Helv-Bold text-white absolute text-center ">{title}</h1>
       </div>
     </div>
   
@@ -114,7 +114,7 @@ banners.forEach((banner) => {
     gsap.fromTo(
       heading,
       { opacity: 1,
-        scale: 1,
+        scale: .5,
 
        },
       {
