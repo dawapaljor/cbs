@@ -38,23 +38,22 @@ const docs = getDocs.map(n => ({
   
   <div class="flex box">
     <!-- First Column - Heading -->
-    <div class="w-2/6  top-0 h-screen flex  items-start panel ">
+    <div class="w-2/6  top-0 h-screen flex  items-start panel " id="sticky">
 
-      {/* <h1 class="ml-5 text-6xl  font-primary font-extrabold  uppercase p-10  border-l-4 text-neutral-800 opacity-20 relative flex items-center bg-white " id={slug}>
+      <h1 class="ml-5 text-6xl  font-primary font-extrabold  uppercase p-10  border-l-4 text-neutral-800 opacity-20 relative flex items-center bg-white" id={slug}>
         {title} 
-        <div class="w-5 h-5 bg-neutral-900 rounded-full    "></div>
+        {/* <div class="w-5 h-5 bg-neutral-900 rounded-full    "></div> */}
         <div class="w-0 h-0  absolute -left-1
           border-t-[10px] border-t-transparent
           border-l-[20px] border-l-amber-300
           border-b-[10px] border-b-transparent">
         </div>
-      </h1> */}
-    <div class="p-10 font-secondary " >
-      <h1 class="text-3xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor ullam, accusantium porro commodi neque autem provident molestias officia. Suscipit quia quam consequatur minima eaque impedit voluptate beatae deserunt distinctio ipsa!</h1>
-    </div>
+      </h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio id voluptates quam eligendi quasi reiciendis explicabo accusamus ratione alias cumque, modi expedita rerum exercitationem placeat ipsam deserunt neque aliquam repellendus?</p>
 
     </div>
     <div class="w-4/6 pl-8 font-secondary">
+      
       <div class="space-y-8">
         <section class="p-10 pb-50 ">
          <div class="text-gray-600 text-lg ">
@@ -101,8 +100,8 @@ boxes.forEach((box, i) => {
       duration: 1,
       scrollTrigger: {
         trigger: box,
-        start: "100px 100px",
-        end: "bottom 100px",
+        start: "100px center",
+        end: "bottom center",
         pin: targetElement,
         markers: true
       }

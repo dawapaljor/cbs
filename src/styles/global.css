@@ -36,7 +36,6 @@
 
 p{padding:10px;}
 
-
 section li{
    list-style-type:decimal;
 
@@ -51,7 +50,3 @@ section h2{
 }
 
 
-#img1{
-    top:0;
-    position:absolute;
-}
