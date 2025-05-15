@@ -1,39 +1,49 @@
 ---
-const {src,id} = Astro.props;
+const {src, id} = Astro.props;
 ---
 
 
-<div class="w-full flex flex-col justify-center items-center p-2 relative" id="gsap-picture-col-1">
-    <img {src} alt="test" {id} />
-</div>
+  <img src={src} alt="test" id="pic1" class="float-right w-[500px] p-2 shadow-xl relative"/>
 
-<style>
-
-</style>
 
 <script >
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   gsap.registerPlugin(ScrollTrigger);
 
-  const el = document.getElementById('gsap-picture-col-1');
-  if (el) {
-    gsap.fromTo(
-      el,
-      { opacity: 0, scale: 0.8, x: -100 },
-      {
-        opacity: 1,
-        scale: 1,
-        x: 0,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 80%',
-          end: 'bottom 60%',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    );
+gsap.from("#pic1",{
+  y: -700,
+  scale:1.5,
+  duration:8,
+  pinSpacing: false,
+  scrollTrigger:{
+    trigger: ".content",
+    start: "50% 50%",
+    end: "50% 20%",
+    toggleActions: "restart none none none",
+    scrub: true,
+    pin: "#pic1",
+    pinSpacing: false,
+    markers:true
   }
+})
+
+  // boxes.forEach((box) => {
+  //   const img = box.querySelector('#pic1');
+  //   if (img) {
+  //     var tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: box,
+  //         start: "40% 95%",
+  //         end: "50% 50%",
+  //         scrub: true,
+  //         markers: true
+  //       }
+  //     });
+  //     tl.to(img, {
+  //       top: "-120%",
+  //       left: "0%"
+  //     });
+  //   }
+  // });
 </script>

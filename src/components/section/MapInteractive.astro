@@ -1,0 +1,76 @@
+---
+const videoSrc = 'media/map.mp4'
+---
+
+<div id="background-container" class="items-center left-0 w-full  bottom-0 border-2 bg-black">
+   <div id="video-container" class="video-container flex w-full justify-center  "> 
+    <video src={videoSrc}  class="flex bg-black opacity-100 sticky top-0" autoplay  id="bgvideo"/>
+</div>
+</div>
+
+
+<script >
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Wait for DOM to be ready
+  window.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('video');
+    if (!video) return;
+
+    // Ensure video metadata is loaded to get duration
+    video.addEventListener('loadedmetadata', () => {
+      const duration = video.duration;
+
+      gsap.to(video, {
+        currentTime: duration,
+        ease: "none",
+        scrollTrigger: {
+          trigger: video,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        }
+      });
+    });
+  });
+
+
+  const bgvideo = document.querySelector("#bgvideo");
+  if (bgvideo instanceof HTMLVideoElement) {
+    bgvideo.pause();
+    bgvideo.currentTime = 0;
+  }
+
+  let section = gsap.utils.toArray(".step") as HTMLElement[];
+  section.forEach((step,i) => {
+    ScrollTrigger.create({
+        trigger:step,
+        start: "bottom bottom",
+        end: "+=1000",
+        pin: true,
+        anticipatePin: 1,
+
+    });
+    gsap.fromTo(bgvideo,{currentTime: 3*i},{
+        scrollTrigger:{
+            trigger: step,
+            scrub: 2,
+            start: "top bottom",
+            end: "bottom bottom"
+        },
+        currentTime: 3*(i+1),
+        duration: 1,
+        ease: "none"
+    });
+  });
+
+//   gsap.to("#bgvideo",{
+//     scrollTrigger:{
+//         scrub: 2
+//     },
+//     scale: 1.5
+//   })
+
+</script>

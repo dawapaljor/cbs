@@ -1,0 +1,124 @@
+---
+
+import QuotePrimary from '../widgets/QuotePrimary.astro';
+
+const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzdtN2h5bnNiZWE0eHR4Z2xsZHpwYmRlNTJjdnAyZmRneDl4OHI0ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zlPF1RO5oNmTe30TPN/giphy.gif'
+const title = "The Introctination"
+const slug = "indoctrination"
+const intro = 'This website is the interactive extension of our second major report, published on May 28th: “When They Came to Take Our Children": China’s Colonial Boarding Schools and the Future of Tibet.'
+
+---
+
+
+<div class="max-w-screen mx-auto  ">
+ 
+ <div class="flex box  flex-col " style=`background:url(${featuredImage}); background-repeat: no-repeat; background-size: cover; background-attachment:fixed`>
+    <div class="banner w-screen h-screen  bg-[url()] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
+      <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center">
+      <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
+      <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p>
+      </div>
+    </div>
+  <div class="flex box bg-white">
+    <!-- First Column - Heading -->
+    <div class="w-1/8 pl-8">
+
+    </div>
+    <div class="max-w-screen-sm  top-0 h-screen flex  items-start panel ">
+    <div class="p-10 font-secondary " >
+      <h1 class="text-3xl" id={slug}>
+       <p class="">This website is the interactive extension of our second major report, published on May 28 2025: “When They Came to Take Our Children: China’s Colonial Boarding Schools and the Future of Tibet.”
+      </p>
+      </h1>
+    </div>
+
+    </div>
+    <div class="w-3/6 pl-8 font-secondary">
+      <div class="space-y-8">
+        <section class="p-10 pb-50 ">
+         <div class="text-gray-600 text-lg content relative">
+          <p>In 2021, Tibet Action Institute released a landmark report that changed the global conversation on Tibet. Titled “Separated from Their Families, Hidden from the World,” it was the first to expose the sheer scale of China’s colonial boarding school system in Tibet—where over 800,000 Tibetan children were being torn from their homes and subjected to forced assimilation. The revelations sent shockwaves across the world, drawing sharp rebukes from international institutions and throwing a global spotlight back on Tibet for the first time in years.</p>
+          <p>China responded with panic and propaganda. The government unleashed a sweeping disinformation campaign—staging tightly controlled tours, flooding media with glowing reports, and attempting to erase the truth with polished lies. But the truth is harder to bury.</p>
+          <p>This website takes you deeper—beyond policy and statistics—into the heart of what’s happening inside these schools. Through exclusive video footage, survivor testimony, and stark visual evidence, we expose the trauma, the cultural erasure, and the daily reality of children growing up under a system designed to strip them of their Tibetan identity.</p>
+          <p>We dismantle China’s propaganda playbook—revealing how the state manipulates global opinion and silences Tibetan voices. And we show you the courage of Tibetans who continue to resist, even under crushing repression.</p>
+        </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+<script>
+import { fade } from "astro:transitions";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+  const slug = box.querySelector('h1')?.id;
+  if (slug) {
+    const targetElement = document.querySelector(`#${slug}`);
+    const heading = box.querySelector('h1');
+    // Initial state
+    gsap.set(heading, { opacity: 1 });
+    // Scroll animation
+    gsap.to(heading, {
+      opacity: 0.2,
+      scrollTrigger: {
+        trigger: box,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        markers: false,
+        pinSpacing:false,
+        anticipatePin: 1,
+      }
+    });
+
+    gsap.to(box, {
+      duration: 1,
+      scrollTrigger: {
+        trigger: box,
+        start: "100px 100px",
+        end: "50% 10%",
+        pin: targetElement,
+        markers: true,
+        pinSpacing:false,
+        anticipatePin: 1,
+
+      }
+    });
+  }
+
+let banners = gsap.utils.toArray(".banner");
+
+banners.forEach((banner) => {
+  let heading = banner.querySelector("h1");
+  if (heading) {
+    gsap.fromTo(
+      heading,
+      { opacity: 1,
+        scale: .5,
+
+       },
+      {
+        opacity: 0,
+        scale: 2,
+        scrollTrigger: {
+          trigger: banner,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+          pin: heading,
+          // markers: true, // Uncomment for debugging
+        },
+      }
+    );
+  }
+});
+</script>

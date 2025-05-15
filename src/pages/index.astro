@@ -1,12 +1,21 @@
 ---
 import Article from '../components/Article.astro';
+import Introduction from '../components/section/introduction.astro';
 import Layout from '../layouts/Layout.astro';
 
 import { getCollection } from "astro:content";
-
+import MapInteractive from '../components/section/MapInteractive.astro';
+import TheIndoctrination from '../components/section/the-indoctrination.astro';
+import Fnq from '../components/section/fnq.astro';
 
 ---
 
 <Layout>
-	<Article />
+	<!-- <Article /> -->
+	 <Introduction/>
+	 
+	<!-- <MapInteractive/> -->
+	 <TheIndoctrination/>
+	 <Fnq/>
+	 
 </Layout>
