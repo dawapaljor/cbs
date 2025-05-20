@@ -10,7 +10,7 @@
 <div class="  w-full  flex justify-center items-center ">
   <div id="accordion-flush" data-accordion="collapse" class="max-w-7xl text-xl w-full" data-active-classes=" bg-white dark:bg-green-600 text-gray-900 dark:text-white" data-inactive-classes="text-neutral-200 ">
     <h2 id="accordion-flush-heading-1">
-      <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-neutral-200 border-b border-gray-200   gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+      <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-neutral-200 border-b border-gray-200   gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="false" aria-controls="accordion-flush-body-1">
         <span>IS CHINA FULFILLING THE RIGHT TO EDUCATION FOR TIBETANS?</span>
         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
@@ -104,7 +104,7 @@ const accordionItems = [
         id: 'accordion-flush-heading-1',
         triggerEl: document.querySelector('#accordion-flush-heading-1 button') as HTMLElement | null,
         targetEl: document.querySelector('#accordion-flush-body-1') as HTMLElement | null,
-        active: true
+        active: false
     },
     {
         id: 'accordion-flush-heading-2',
