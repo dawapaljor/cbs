@@ -1,6 +1,6 @@
 <div class="h-screen  bg-contain relative bg-fixed flex  justify-baseline items-baseline-last">
     
-    <div class="w-full h-screen   bg-black/60 absolute z-10 "></div>
+    <div class="w-full h-screen   bg-black/80 absolute z-10 "></div>
     <video class="w-full z-0 absolute  -top-60"  autoplay muted>
         <source src="media/banner-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -28,13 +28,7 @@
         <span class="px-2">DONATE NOW</span>
          <img src="dollar.svg"  class="w-10 "/> 
     </a> -->
-    <div class="z-0 flex  bg-red-600" id="gallery">
-        <!-- <img class="w-96 shadow-2xl absolute opacity-0 " id="gallery-img-5" alt="" src="" > -->
-        <!-- <img class="w-96 shadow-2xl absolute right-10 rotate-6 bottom-40 opacity-0 " id="gallery-img-1" alt="assembly" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXh2ZGpzOHN4Z2t4OTZhbXVqbGV4czljZzlyMWMwNDNrNjNmdGxrcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cff40zpKacFFDJkLeh/giphy.gif" >
-        <img class="w-96 shadow-2xl absolute right-70 -rotate-20 top-90 opacity-0" id="gallery-img-2" alt="Rolling Blanket" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODU2ZTgxOWlvd2xiaDE0NTFsNWM5N2RkaWk4ZWhsMzltbnR1NjhsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VWeYmlmIFJx3FbMjTv/giphy.gif" >
-        <img class="w-96 shadow-2xl absolute  -rotate-4 top-30 opacity-0" id="gallery-img-3" alt="shaking-flags" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWczc3N3N25yNHlkMXF0Z203NXF6enRwZTNrMTNzN3dubmtleW53cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sdVWR1Mbb8VsCBKmVa/giphy.gif" >
-        <img class="w-96 shadow-2xl absolute  -rotate-6 right-20 top-10 opacity-0" id="gallery-img-4" alt="marching-flag"  src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExam95ZGk0dmw4M21qMHFoNmdjMnQwNHM2Mjc3ZDZnbGc1aDNva2I4NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zlPF1RO5oNmTe30TPN/giphy.gif" > -->
-    </div>
+  
     
 </div>
 
@@ -71,20 +65,5 @@
         "-=0.3"
     );
 
-    // Animate gallery images with staggered effect
-    const galleryImages = [
-        { id: "gallery-img-1", x: -200, y: -100 },
-        { id: "gallery-img-2", x: 200, y: 100 },
-        { id: "gallery-img-3", x: -150, y: 50 },
-        { id: "gallery-img-4", x: 150, y: -50 },
-        { id: "gallery-img-5", x: -100, y: 100 }
-    ];
-
-    galleryImages.forEach((img, index) => {
-        tl.fromTo(`#${img.id}`,
-            { x: img.x, y: img.y, opacity: 0, rotation: img.x > 0 ? 20 : -20 },
-            { x: 0, y: 0, opacity: 1, rotation: 0, duration: 1 },
-            `-=${0.4 - (index * 0.05)}`
-        );
-    });
+  
 </script>
