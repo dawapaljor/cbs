@@ -6,7 +6,6 @@ const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJlaHN
 const title = "Introduction"
 const slug = "introduction"
 const intro = 'This website is the interactive extension of our second major report, published on May 28th: “When They Came to Take Our Children": China’s Colonial Boarding Schools and the Future of Tibet.'
-
 ---
 <!-- {
 	docs.map(({ title,slug, Content }) => (
@@ -15,56 +14,37 @@ const intro = 'This website is the interactive extension of our second major rep
 	))
  }   -->
 
-<div class="max-w-screen mx-auto  ">
- 
- <div class="flex box  flex-col " style=`background:url(${featuredImage}); background-repeat: no-repeat; background-size: cover; background-attachment:fixed`>
-    <div class="banner w-screen h-screen   bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
+<div class="w-screen mx-auto ">
+ <div class="flex box flex-col items-center">
+    <div class="banner w-screen h-screen bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
       <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center">
       <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
-      <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p>
+      <!-- <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p> -->
       </div>
     </div>
-  <div class="flex box bg-white">
-    <!-- First Column - Heading -->
-    <div class="w-1/8 pl-8">
 
-    </div>
-    <div class="w-2/8  top-0 h-screen flex  items-start panel ">
 
-      {/* <h1 class="ml-5 text-6xl  font-primary font-extrabold  uppercase p-10  border-l-4 text-neutral-800 opacity-20 relative flex items-center bg-white " id={slug}>
-        {title} 
-        <div class="w-5 h-5 bg-neutral-900 rounded-full    "></div>
-        <div class="w-0 h-0  absolute -left-1
-          border-t-[10px] border-t-transparent
-          border-l-[20px] border-l-amber-300
-          border-b-[10px] border-b-transparent">
-        </div>
-      </h1> */}
-    <div class="p-10 font-secondary " >
-      <h1 class="text-3xl" id={slug}>
-       <p class="">This website is the interactive extension of our second major report, published on May 28 2025: “When They Came to Take Our Children: China’s Colonial Boarding Schools and the Future of Tibet.”
-      </p>
-      </h1>
-    </div>
-
-    </div>
-    <div class="w-3/6 pl-8 font-secondary">
-      <div class="space-y-8">
-        <section class="p-10 pb-50 ">
+    <section class=" font-secondary max-w-7xl ">
+        <div class="p-10 ">
          <div class="text-gray-600 text-lg content relative">
           <p>In 2021, Tibet Action Institute released a landmark report that changed the global conversation on Tibet. Titled “Separated from Their Families, Hidden from the World,” it was the first to expose the sheer scale of China’s colonial boarding school system in Tibet—where over 800,000 Tibetan children were being torn from their homes and subjected to forced assimilation. The revelations sent shockwaves across the world, drawing sharp rebukes from international institutions and throwing a global spotlight back on Tibet for the first time in years.</p>
           <p>China responded with panic and propaganda. The government unleashed a sweeping disinformation campaign—staging tightly controlled tours, flooding media with glowing reports, and attempting to erase the truth with polished lies. But the truth is harder to bury.</p>
           <p>This website takes you deeper—beyond policy and statistics—into the heart of what’s happening inside these schools. Through exclusive video footage, survivor testimony, and stark visual evidence, we expose the trauma, the cultural erasure, and the daily reality of children growing up under a system designed to strip them of their Tibetan identity.</p>
           <p>We dismantle China’s propaganda playbook—revealing how the state manipulates global opinion and silences Tibetan voices. And we show you the courage of Tibetans who continue to resist, even under crushing repression.</p>
         </div>
-        </section>
       </div>
-    </div>
-    <div class="w-1/6 pl-8 font-secondary">
+    </section>
 
-    </div>
-  </div>
-
+    <!-- <div class=" w-screen h-80 bg-cover bg-fixed relative bg-red-400" >
+      <div class="w-full h-full absolute flex  justify-center bg-neutral-900">
+          <div class="w-96 h-54 bg-blue-600"></div>
+          <div class="w-96 h-54 bg-white"></div>
+          <div class="w-96 h-54 bg-red-700"></div>
+          <div class="w-96 h-54 bg-green-700"></div>
+          <div class="w-96 h-54 bg-amber-400"></div>
+      </div>
+    </div> -->
+</div>
 </div>
 
 <script>

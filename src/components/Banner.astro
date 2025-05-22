@@ -1,10 +1,90 @@
-<div class="h-1/2 max-w-screen flex items-center justify-center bg-[url('/banner.png')] bg-contain relative bg-fixed ">
-    <div class="w-full h-full bg-gradient-to-t from-[#ffffff]  to-[#334155]/20 absolute  z-0"></div>
-    <div class="flex items-center justify-center flex-col z-0">
-        <h1 class="text-6xl uppercase font-bold text-red-500 bg-white/50 backdrop-blur-xl p-5">When They Came to Take Our Children</h1>
-        <h2 class="text-2xl font-bold text-red-500 p-5 bg-white/50 backdrop-blur-xl">China’s Colonial Boarding Schools and the Future of Tibet</h2>
-        <p class="  text-slate-950 bg-white/50 backdrop-blur-xl">Report By</p>
-        <p class="text-white"><img src="tai-logo.png" class="w-50"/></p>
+<div class="h-screen  bg-contain relative bg-fixed flex  justify-baseline items-center">
+    
+    <div class="w-full h-screen  z-0 bg-black absolute backdrop-blur-sm"></div>
+    <video class="w-full z-0 absolute opacity-50 -top-60"  autoplay muted>
+        <source src="media/banner-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    
+    <div class="flex-col z-0 p-20 justify-baseline items-baseline  w-1/2">
+        <h1 class="text-8xl uppercase font-extrabold text-neutral-100  p-5 opacity-0" id="banner-title">"When They Came to Take Our Children"</h1>
+        <h2 class="text-3xl font-bold text-neutral-100 px-5 opacity-0 pb-20" id="banner-subtitle">China’s Colonial Boarding Schools and the Future of Tibet</h2>
+
+        <a href="#" class="text-xl p-3  text-neutral-100   items-center  z-10 ">
+            <span class="px-2 uppercase underline underline-offset-8 hover:text-neutral-300 ">Read The Report</span>
+        </a>
+        <!-- <p class="  text-neutral-900 opacity-0 " id="banner-by">Report By</p> -->
+
+        <div class="flex-col items-center justify-around pt-40">
+            
         
+            <p class="text-neutral-900 opacity-0" id="banner-logo">
+                <a href="https://tibetaction.net" target="_blank"><img src="tai-logo.png" class="w-50"/></a>
+            </p>
+        </div>
+       
     </div>
+    <!-- <a href="https://tibetaction.net/support/" target="_blank" class="text-md bg-amber-300  top-0 left-15 p-3 pt-10 text-neutral-800  font-bold flex items-center fixed shadow-md z-10">
+        <span class="px-2">DONATE NOW</span>
+         <img src="dollar.svg"  class="w-10 "/> 
+    </a> -->
+    <div class="z-0 flex  bg-red-600" id="gallery">
+        <!-- <img class="w-96 shadow-2xl absolute opacity-0 " id="gallery-img-5" alt="" src="" > -->
+        <!-- <img class="w-96 shadow-2xl absolute right-10 rotate-6 bottom-40 opacity-0 " id="gallery-img-1" alt="assembly" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXh2ZGpzOHN4Z2t4OTZhbXVqbGV4czljZzlyMWMwNDNrNjNmdGxrcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cff40zpKacFFDJkLeh/giphy.gif" >
+        <img class="w-96 shadow-2xl absolute right-70 -rotate-20 top-90 opacity-0" id="gallery-img-2" alt="Rolling Blanket" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODU2ZTgxOWlvd2xiaDE0NTFsNWM5N2RkaWk4ZWhsMzltbnR1NjhsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VWeYmlmIFJx3FbMjTv/giphy.gif" >
+        <img class="w-96 shadow-2xl absolute  -rotate-4 top-30 opacity-0" id="gallery-img-3" alt="shaking-flags" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWczc3N3N25yNHlkMXF0Z203NXF6enRwZTNrMTNzN3dubmtleW53cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sdVWR1Mbb8VsCBKmVa/giphy.gif" >
+        <img class="w-96 shadow-2xl absolute  -rotate-6 right-20 top-10 opacity-0" id="gallery-img-4" alt="marching-flag"  src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExam95ZGk0dmw4M21qMHFoNmdjMnQwNHM2Mjc3ZDZnbGc1aDNva2I4NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zlPF1RO5oNmTe30TPN/giphy.gif" > -->
+    </div>
+    
 </div>
+
+<script>
+    import { gsap } from 'gsap';
+    // Create a GSAP timeline
+    const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+    // Animate triangles sliding in from top
+    tl.fromTo("#triangle, #triangle-orange",
+        { y: -1000, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 }
+    )
+    // Animate the title and subtitle
+    .fromTo("#banner-title", 
+        { y: -100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 },
+        "<"
+    )
+    .fromTo("#banner-subtitle",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 },
+        "-=0.5"
+    )
+    .fromTo("#banner-by",
+        { y: -50, opacity: 0 },
+        
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=0.3"
+    )
+    .fromTo("#banner-logo",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=0.3"
+    );
+
+    // Animate gallery images with staggered effect
+    const galleryImages = [
+        { id: "gallery-img-1", x: -200, y: -100 },
+        { id: "gallery-img-2", x: 200, y: 100 },
+        { id: "gallery-img-3", x: -150, y: 50 },
+        { id: "gallery-img-4", x: 150, y: -50 },
+        { id: "gallery-img-5", x: -100, y: 100 }
+    ];
+
+    galleryImages.forEach((img, index) => {
+        tl.fromTo(`#${img.id}`,
+            { x: img.x, y: img.y, opacity: 0, rotation: img.x > 0 ? 20 : -20 },
+            { x: 0, y: 0, opacity: 1, rotation: 0, duration: 1 },
+            `-=${0.4 - (index * 0.05)}`
+        );
+    });
+</script>

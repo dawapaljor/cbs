@@ -5,9 +5,10 @@ import "../styles/global.css";
 
 import { ClientRouter } from "astro:transitions";
 
-import BannerFull from "../components/BannerFull.astro"
 import BannerTriangle from "../components/BannerTriangle.astro"
 import Navbar from "../components/Navbar.astro";
+import BannerFull from "../components/BannerFull.astro";
+import Banner from "../components/Banner.astro";
 ---
 
 
@@ -25,9 +26,10 @@ import Navbar from "../components/Navbar.astro";
 		<link href="//vjs.zencdn.net/8.23.3/video-js.min.css" rel="stylesheet">
 		<script is:inline src="//vjs.zencdn.net/8.23.3/video.min.js"></script>
 	</head>
-	<body>
-		
-		<BannerTriangle/>
+	<body class="transition:all">
+		<Banner/>
+		<!-- <BannerFull/>
+		<BannerTriangle/> -->
 		<!-- <BannerFull/> -->
 		<slot />
 		<!-- <FooterSingleCol/> -->
