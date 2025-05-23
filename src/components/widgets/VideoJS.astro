@@ -9,10 +9,10 @@ import '../../styles/video.css';
 import '@videojs/themes/dist/forest/index.css';
 // Sea
 import '@videojs/themes/dist/sea/index.css';
-const {src,poster} = Astro.props
+const {src,poster,id} = Astro.props
 ---
 
-  <video  controls class="w-40 sm:w-52 md:max-w-96 lg:w-60  video-js vjs-theme-city " poster={poster} data-setup="{}" >
-    <source src={src} type="video/mp4"/>
+  <video  controls class="   video-js vjs-theme-fantasy" poster={poster} data-setup="{}"  >
+    <source src={src} type="video/mp4" {id} />
     Your browser does not support the video tag.
   </video>

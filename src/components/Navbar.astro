@@ -71,7 +71,7 @@ const menuItems = [
           {
             menuItems.map((item) => (
               <li class="py-2  ms-0 hover:text-amber-500">
-                <a href={item.href}>{item.name}</a>
+                <a href={item.href} data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation">{item.name}</a>
             </li>
             ))
           }
