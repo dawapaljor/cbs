@@ -1,0 +1,54 @@
+---
+import Video from "./VideoJS.astro";
+const { src, title = "Watch Video" } = Astro.props;
+let isOpen = false;
+
+function openModal() {
+  isOpen = true;
+}
+
+function closeModal() {
+  isOpen = false;
+}
+---
+
+<button id="open-modal" 
+  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+>
+  {title}
+</button>
+
+<div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md">
+    <button
+      id="close-modal"
+      class="absolute top-2 right-2 text-white hover:text-neutral-300 text-3xl"
+      aria-label="Close"
+    >
+      ✕
+    </button>
+  <div class="relative bg-white rounded-lg shadow-lg w-full max-w-3xl">
+    
+    <div class="aspect-w-16 aspect-h-9">
+      <video
+        id="modal-video"
+        class="w-full h-full"
+        src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Village+Kindergarten+(not+boarding+_).mp4"
+        controls
+      ></video>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('open-modal').onclick = () => {
+    document.getElementById('modal').classList.remove('hidden');
+  };
+  document.getElementById('close-modal').onclick = () => {
+    document.getElementById('modal').classList.add('hidden');
+    const video = document.getElementById('modal-video');
+    if (video) {
+      video.pause();
+      video.currentTime = 0; // Optional: reset to start
+    }
+  };
+</script>
