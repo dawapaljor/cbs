@@ -23,24 +23,24 @@ const videoUrls = [
 
 <div class="w-screen mx-auto ">
  <div class="flex box flex-col items-center">
-    <div class="banner w-screen h-screen bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
-      <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center">
-      <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
-      <!-- <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p> -->
-      </div>
+  <div class="banner w-screen h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
+    <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center items-center">
+    <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
+    <!-- <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p> -->
     </div>
+  </div>
 
 
-    <section class=" font-secondary max-w-7xl ">
-        <div class="p-10 ">
-         <div class="text-gray-600 text-lg content ">
+    <section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content ">
+        
+         <div class="">
           <p>In 2021, Tibet Action Institute released a landmark report that changed the global conversation on Tibet. Titled "Separated from Their Families, Hidden from the World," it was the first to expose the sheer scale of China's colonial boarding school system in Tibet—where over 800,000 Tibetan children were being torn from their homes and subjected to forced assimilation. The revelations sent shockwaves across the world, drawing sharp rebukes from international institutions and throwing a global spotlight back on Tibet for the first time in years.</p>
           <p>China responded with panic and propaganda. The government unleashed a sweeping disinformation campaign—staging tightly controlled tours, flooding media with glowing reports, and attempting to erase the truth with polished lies. But the truth is harder to bury.</p>
           <p>This website takes you deeper—beyond policy and statistics—into the heart of what's happening inside these schools. Through exclusive video footage, survivor testimony, and stark visual evidence, we expose the trauma, the cultural erasure, and the daily reality of children growing up under a system designed to strip them of their Tibetan identity.</p>
           <p>We dismantle China's propaganda playbook—revealing how the state manipulates global opinion and silences Tibetan voices. And we show you the courage of Tibetans who continue to resist, even under crushing repression.</p>
         </div>
        
-      </div>
+    
     </section>
     <section class="font-secondary max-w-7xl  ">
 
@@ -89,7 +89,7 @@ const videoUrls = [
   </div>
 </div>
 
-<script>
+<!-- <script>
 import { fade } from "astro:transitions";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -154,7 +154,7 @@ banners.forEach((banner) => {
           start: "top center",
           end: "bottom center",
           scrub: true,
-          pin: heading,
+          // pin: heading,
           // markers: true, // Uncomment for debugging
         },
       }
@@ -185,4 +185,4 @@ if (modal && closeModalBtn && modalVideo && modalVideoSource) {
     modalVideo.currentTime = 0;
   });
 }
-</script>
+</script> -->

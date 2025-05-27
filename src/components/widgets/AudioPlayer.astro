@@ -3,11 +3,10 @@ const {src} = Astro.props;
 ---
 <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/tailwind-audio/+esm"></script>
 
-
-<div class="w-full flex items-center justify-center">
+<div class="w-full flex items-center justify-center py-5">
   <div class="flex-col   border-2  border-neutral-300 w-1/2 self-center">
     <div class="text-neutral-600 bg-neutral-200 text-lg ">
-      <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero aperiam deserunt ut, nesciunt consequuntur doloribus, consequatur exercitationem numquam dolores quibusdam eveniet omnis? Deleniti quis quibusdam nisi nemo repudiandae ut a!</p>
+      <p class=""><slot/></p>
     </div>
       <media-theme-tailwind-audio 
         style="--media-primary-color: #ffa200; --media-secondary-color: #cccccc;"
