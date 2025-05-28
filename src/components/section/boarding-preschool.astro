@@ -1,6 +1,7 @@
 ---
 
 import QuotePrimary from '../widgets/QuotePrimary.astro';
+import VideoModal from '../widgets/VideoModal.astro';
 import Video from '../widgets/VideoJS.astro';
 const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJlaHNhM3ZkM2Jjazdyazk1NnR4M2J1MmQ4bG05ZzAycGJ3bG9wcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cff40zpKacFFDJkLeh/giphy.gif'
 const title = "Boarding Preschools"
@@ -88,6 +89,8 @@ const videoUrls = [
     <Video id="modal-video-source" src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Village+Kindergarten+(not+boarding+_).mp4"></Video>
   </div>
 </div>
+
+<VideoModal/>
 
 <!-- <script>
 import { fade } from "astro:transitions";
