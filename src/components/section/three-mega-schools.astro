@@ -1,0 +1,122 @@
+---
+
+import QuotePrimary from '../widgets/QuotePrimary.astro';
+import AudioPlayer from '../widgets/AudioPlayer.astro';
+import VideoJS from '../widgets/VideoJS.astro';
+const featuredImage = 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzRrdWNrbzN2d3ZkODJ5OHl0cDNxbDJ6enF0c3h6Nzc5b2NhODc2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sdVWR1Mbb8VsCBKmVa/giphy.gif'
+const title = "Three Mega Schools"
+const slug = "three-mega-schools"
+const intro = ''
+---
+<!-- {
+	docs.map(({ title,slug, Content }) => (
+		<h2 class="" id={slug}>{title}</h2>
+		<Content class="pt-10" />
+	))
+ }   -->
+
+<div class="w-screen mx-auto ">
+ <div class="flex box flex-col items-center">
+    <div class="banner w-screen h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
+      <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center items-center">
+      <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
+      <!-- <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p> -->
+      </div>
+    </div>
+
+
+    <section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content relative">
+        <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/tibetan-primary-school.mp4" poster="media/tibetan-primary-school.png" id=""></VideoJS>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique atque in perferendis rem quisquam assumenda cum architecto minima error magnam sit nobis, eius soluta eum hic adipisci, dolore maxime est.
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam consequatur illo, dolore cum eligendi debitis modi cumque provident vitae, unde aperiam ipsa, blanditiis nemo voluptates earum illum soluta reprehenderit quidem!</p>
+       
+    </section>
+
+    <!-- <div class=" w-screen h-80 bg-cover bg-fixed relative bg-red-400" >
+      <div class="w-full h-full absolute flex  justify-center bg-neutral-900">
+          <div class="w-96 h-54 bg-blue-600"></div>
+          <div class="w-96 h-54 bg-white"></div>
+          <div class="w-96 h-54 bg-red-700"></div>
+          <div class="w-96 h-54 bg-green-700"></div>
+          <div class="w-96 h-54 bg-amber-400"></div>
+      </div>
+    </div> -->
+</div>
+</div>
+
+
+
+<script>
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+let boxes = gsap.utils.toArray(".box") as HTMLElement[];
+
+boxes.forEach((box, i) => {
+  const slug = box.querySelector('h1')?.id;
+  if (slug) {
+    const targetElement = document.querySelector(`#${slug}`);
+    const heading = box.querySelector('h1');
+    // Initial state
+    gsap.set(heading, { opacity: 1 });
+    // Scroll animation
+    gsap.to(heading, {
+      opacity: 0.2,
+      scrollTrigger: {
+        trigger: box,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        markers: false,
+        pinSpacing:false,
+        anticipatePin: 1,
+      }
+    });
+
+    gsap.to(box, {
+      duration: 1,
+      scrollTrigger: {
+        trigger: box,
+        start: "100px 100px",
+        end: "50% 10%",
+        pin: targetElement,
+        markers: true,
+        pinSpacing:false,
+        anticipatePin: 1,
+
+      }
+    });
+  }
+});
+
+let banners = gsap.utils.toArray(".banner");
+
+banners.forEach((banner) => {
+  let heading = banner.querySelector("h1");
+  if (heading) {
+    gsap.fromTo(
+      heading,
+      { opacity: 1,
+        scale: .5,
+
+       },
+      {
+        opacity: 0,
+        scale: 2,
+        scrollTrigger: {
+          trigger: banner,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+          // pin: heading,
+          // markers: true, // Uncomment for debugging
+        },
+      }
+    );
+  }
+});
+</script>
