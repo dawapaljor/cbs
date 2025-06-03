@@ -1,10 +1,9 @@
 ---
 
 import VideoModal from '../widgets/VideoModal.astro';
-const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJlaHNhM3ZkM2Jjazdyazk1NnR4M2J1MmQ4bG05ZzAycGJ3bG9wcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cff40zpKacFFDJkLeh/giphy.gif'
+const featuredImage = 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGhwdm9mc25jOXg4djhjc25tMTZra2ljb255dDlxYjJ4azNudG81cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VWeYmlmIFJx3FbMjTv/giphy.gif'
 const title = "Boarding Preschools"
 const slug = "boarding-preschools"
-const intro = ""
 const videoUrls = [
   {
     title: "Lhadon Medrogongkar, Thanggya Central Bilingual Preschool",
@@ -61,7 +60,7 @@ const videoUrls = [
         
         {videoUrls.map((video, idx) => (
           <div id={video.id}  class="group bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden"
-               style={`background-image:url(${video.image})`}>
+               style={`background-image:url(${video.image});`}>
             <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
             <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 " />
           </div>
