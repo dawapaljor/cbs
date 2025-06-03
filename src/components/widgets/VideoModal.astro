@@ -1,6 +1,7 @@
 ---
 import Video from "./VideoJS.astro";
-const { src, title = "Watch Video" } = Astro.props;
+const { src, id } = Astro.props;
+
 let isOpen = false;
 
 function openModal() {
@@ -13,8 +14,7 @@ function closeModal() {
 ---
 
 
-
-<div id="modal" class="hidden fixed inset-0 z-50   bg-black/90 backdrop-blur-md">
+<div id="modal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md">
   <div class="h-full flex justify-center items-center">
     <button
     id="close-modal"
@@ -38,15 +38,14 @@ function closeModal() {
   </div>
 </div>
 
-<script>
-  const openModalBtn = document.getElementById('open-modal');
+<script define:vars={{id}}>
+  const openModalBtn = document.getElementById(id);
   if (openModalBtn) {
     openModalBtn.onclick = () => {
       const modal = document.getElementById('modal');
-      if (modal) modal.classList.remove('hidden');
+      if (modal) modal.this.classList.remove('hidden');
     };
   }
-
   const closeModalBtn = document.getElementById('close-modal');
   if (closeModalBtn) {
     closeModalBtn.onclick = () => {
@@ -59,4 +58,24 @@ function closeModal() {
       }
     };
   }
+
+  // const openModalBtn = document.getElementById(id);
+  // if (openModalBtn) {
+  //   openModalBtn.onclick = () => {
+  //     const modal = document.getElementById('modal');
+  //     if (modal) modal.classList.remove('hidden');
+  //   };
+  // }
+  // const closeModalBtn = document.getElementById('close-modal');
+  // if (closeModalBtn) {
+  //   closeModalBtn.onclick = () => {
+  //     const modal = document.getElementById('modal');
+  //     if (modal) modal.classList.add('hidden');
+  //     const video = document.getElementById('modal-video');
+  //     if (video instanceof HTMLVideoElement) {
+  //       video.pause();
+  //       video.currentTime = 0;
+  //     }
+  //   };
+  // }
 </script>

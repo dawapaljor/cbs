@@ -1,21 +1,45 @@
 ---
 
-import QuotePrimary from '../widgets/QuotePrimary.astro';
 import VideoModal from '../widgets/VideoModal.astro';
-import Video from '../widgets/VideoJS.astro';
 const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJlaHNhM3ZkM2Jjazdyazk1NnR4M2J1MmQ4bG05ZzAycGJ3bG9wcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cff40zpKacFFDJkLeh/giphy.gif'
 const title = "Boarding Preschools"
 const slug = "boarding-preschools"
 const intro = ""
 const videoUrls = [
-  "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Lhadon+Medrogongkar%2C+Thanggya+Central+Bilingual+Preschool.mp4",
-  "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Mucun+Village+Kindergarten+(not+boarding_).mp4",
-  "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Pre-boarding+school+Medrogongkar+(short).mp4",
-  "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Tashi+Herdsman+explaining+Primary%2C+middle+boarding+schools+(1).mp4",
-  "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Village+Kindergarten+(not+boarding+_).mp4"
+  {
+    title: "Lhadon Medrogongkar, Thanggya Central Bilingual Preschool",
+    url: "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Lhadon+Medrogongkar%2C+Thanggya+Central+Bilingual+Preschool.mp4",
+    image: "media/1.png",
+    id: "video1"
+  },
+  {
+    title: "Mucun Village Kindergarten (not boarding)",
+    url: "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Mucun+Village+Kindergarten+(not+boarding_).mp4",
+    image: "media/2.png",
+    id: "video2"
+  },
+  {
+    title: "Pre-boarding school Medrogongkar (short)",
+    url: "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Pre-boarding+school+Medrogongkar+(short).mp4",
+    image: "media/3.png",
+    id: "video3"
+  },
+  {
+    title: "Tashi Herdsman explaining Primary, middle boarding schools",
+    url: "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Tashi+Herdsman+explaining+Primary%2C+middle+boarding+schools+(1).mp4",
+    image: "media/4.png",
+    id: "video4"
+  },
+  {
+    title: "Village Kindergarten (not boarding)",
+    url: "https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Village+Kindergarten+(not+boarding+_).mp4",
+    image: "media/5.png",
+    id: "video5"
+  },
+  
 ];
----
 
+---
 
 <div class="w-screen mx-auto ">
  <div class="flex box flex-col items-center">
@@ -34,43 +58,27 @@ const videoUrls = [
     <section class="font-secondary max-w-7xl  ">
 
        <div class="text-gray-600 text-lg content grid grid-cols-3 gap-10 w-full cursor-pointer pb-10">
-
-        <div class="group bg-[url(media/1.png)] bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden" >
-          <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
-          <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 ">
-        </div>
-
-        <div class="group bg-[url(media/2.png)] bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden" >
-          <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
-          <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 ">
-        </div>
-       
-        <div class="group bg-[url(media/3.png)] bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden" >
-          <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
-          <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 ">
-        </div>
-
-        <div id="open-modal"  class="group bg-[url(media/4.png)] bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden" >
-          <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
-          <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 ">
-        </div>
         
-        <div class="group bg-[url(media/5.png)] bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden" >
-          <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
-          <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 ">
-        </div>
-        
-      </div>
+        {videoUrls.map((video, idx) => (
+          <div id={video.id}  class="group bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden"
+               style={`background-image:url(${video.image})`}>
+            <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
+            <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 " />
+          </div>
+             <VideoModal src={video.url} image={video.image} id={video.id}/>
+        ))}
+
+       </div>
   </section>
 
 </div>
 </div>
 
 
-<VideoModal src={videoUrls[4]}/>
+
 
 <!-- <button id="open-modal" 
   class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
 >
   {title}
-</button> -->
+</button> -->             

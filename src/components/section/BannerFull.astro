@@ -1,8 +1,13 @@
+---
+import SpeakerMute from "../icons/speaker-mute.astro";
+import SpeakerUnMute from "../icons/speaker-unmute.astro";
+---
+
 <div class="h-screen  bg-black relative  flex   items-center justify-around">
     
     <div class="flex-col  p-20 justify-baseline items-baseline  w-1/2 font-Helv-Normal z-20">
         <h1 class="text-6xl uppercase font-extrabold text-neutral-100  p-5 opacity-0 font-Helv-Bold" id="banner-title">"When They Came to Take Our Children"</h1>
-        <h2 class="text-3xl  text-neutral-100 px-5 opacity-0 pb-10" id="banner-subtitle">China’s Colonial Boarding Schools and the Future of Tibet</h2>
+        <h2 class="text-3xl  text-neutral-100 px-5 opacity-0 pb-10" id="banner-subtitle">China's Colonial Boarding Schools and the Future of Tibet</h2>
 
         <a href="#" class="text-md p-3  text-neutral-100   items-center  z-10 ">
             <span class="px-2 uppercase underline underline-offset-8 hover:text-neutral-300 ">Read The Report</span>
@@ -15,10 +20,21 @@
         </div>
     </div>
 
-    <video class="w-[800px] "  autoplay muted>
-        <source src="media/banner-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-      </video>
+    <div class="relative ">
+        <video id="bannerVideo" class="w-[800px]" autoplay muted>
+            <source src="media/banner-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        
+        <button id="muteBtn" class="w-full bg-amber-300 rounded px-3 flex justify-center items-center">
+            <span id="muteIcon">
+                <SpeakerMute/>
+            </span>
+            <span id="unmuteIcon" style="display:none;">
+                <SpeakerUnMute/>
+            </span>
+        </button>
+    </div>
     <!-- <a href="https://tibetaction.net/support/" target="_blank" class="text-md bg-amber-300  top-0 left-15 p-3 pt-10 text-neutral-800  font-bold flex items-center fixed shadow-md z-10">
         <span class="px-2">DONATE NOW</span>
          <img src="dollar.svg"  class="w-10 "/> 
@@ -60,5 +76,30 @@
         "-=0.3"
     );
 
-  
+    const video = document.getElementById('bannerVideo') as HTMLVideoElement | null;
+    const muteBtn = document.getElementById('muteBtn');
+    const muteIcon = document.getElementById('muteIcon');
+    const unmuteIcon = document.getElementById('unmuteIcon');
+
+    if (video && muteBtn && muteIcon && unmuteIcon) {
+        // Set initial state
+        if (video.muted) {
+            muteIcon.style.display = '';
+            unmuteIcon.style.display = 'none';
+        } else {
+            muteIcon.style.display = 'none';
+            unmuteIcon.style.display = '';
+        }
+
+        muteBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            if (video.muted) {
+                muteIcon.style.display = '';
+                unmuteIcon.style.display = 'none';
+            } else {
+                muteIcon.style.display = 'none';
+                unmuteIcon.style.display = '';
+            }
+        });
+    }
 </script>
