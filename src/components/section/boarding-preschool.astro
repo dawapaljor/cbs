@@ -1,6 +1,6 @@
 ---
 
-import VideoModal from '../widgets/VideoModal.astro';
+
 const featuredImage = 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGhwdm9mc25jOXg4djhjc25tMTZra2ljb255dDlxYjJ4azNudG81cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VWeYmlmIFJx3FbMjTv/giphy.gif'
 const title = "Boarding Preschools"
 const slug = "boarding-preschools"
@@ -54,30 +54,59 @@ const videoUrls = [
           <p>This website takes you deeper—beyond policy and statistics—into the heart of what's happening inside these schools. Through exclusive video footage, survivor testimony, and stark visual evidence, we expose the trauma, the cultural erasure, and the daily reality of children growing up under a system designed to strip them of their Tibetan identity.</p>
           <p>We dismantle China's propaganda playbook—revealing how the state manipulates global opinion and silences Tibetan voices. And we show you the courage of Tibetans who continue to resist, even under crushing repression.</p>
     </section>
-    <section class="font-secondary max-w-7xl  ">
-
-       <div class="text-gray-600 text-lg content grid grid-cols-3 gap-10 w-full cursor-pointer pb-10">
-        
-        {videoUrls.map((video, idx) => (
-          <div id={video.id}  class="group bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden"
+    <section class="font-secondary max-w-7xl">
+      <div 
+        x-data="{ open: false, currentVideo: null }" 
+        class="text-gray-600 text-lg content grid grid-cols-3 gap-10 w-full cursor-pointer pb-10"
+      >
+        {videoUrls.map(video => (
+          <div 
+            x-data={`{ video: ${JSON.stringify(video)} }`}
+            class="rounded shadow hover:shadow-lg transition" 
+            @click="open = true; currentVideo = video"
+          >
+            <div class="group bg-cover bg-center bg-no-repeat rounded-xl h-96 w-90 relative flex items-center justify-center overflow-hidden"
                style={`background-image:url(${video.image});`}>
             <div class="w-full h-full absolute bg-neutral-950/50 z-0 group-hover:bg-neutral-950/80  transition-all duration-300"></div>
             <img src="media/film.svg" alt="" class="w-30 z-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300 " />
           </div>
-             <VideoModal src={video.url} image={video.image} id={video.id}/>
+          </div>
         ))}
 
-       </div>
-  </section>
+        <!-- Modal -->
+        <div 
+          x-show="open" 
+          x-transition 
+          class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          style="display: none;"
+        >
+          <div class="bg-white rounded-lg overflow-hidden shadow-lg max-w-2xl w-full relative">
+            <button 
+              class="absolute top-2 right-2 text-2xl font-bold text-gray-700 hover:text-red-500"
+              @click="open = false; currentVideo = null"
+            >&times;</button>
+            <template x-if="currentVideo">
+              <div class="p-4">
+                <h2 class="text-xl font-bold mb-4" x-text="currentVideo.title"></h2>
+                <video 
+                  x-bind:src="currentVideo.url" 
+                  controls 
+                  autoplay 
+                  class="w-full rounded"
+                ></video>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
 
 </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 
 
-<!-- <button id="open-modal" 
-  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
->
-  {title}
-</button> -->             
+
+          
