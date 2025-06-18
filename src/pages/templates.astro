@@ -1,0 +1,42 @@
+---
+import Article from '../components/Article.astro';
+import Introduction from '../components/section/introduction.astro';
+import Layout from '../layouts/Layout.astro';
+
+import { getCollection } from "astro:content";
+import MapInteractive from '../components/section/MapInteractive.astro';
+import TheIndoctrination from '../components/section/the-indoctrination.astro';
+import Fnq from '../components/section/fnq.astro';
+import AbuseNegligence from '../components/section/abuse&Negligence.astro';
+import BoardingPreschool from '../components/section/boarding-preschool.astro';
+import AudioPlayer from '../components/widgets/AudioPlayer.astro';
+import Indoctrination from '../components/section/indoctrination.astro';
+import ThreeMegaSchools from '../components/section/three-mega-schools.astro';
+import VideoJS from '../components/widgets/VideoJS.astro';
+---
+
+<Layout>
+	<div id="introduction" class="w-screen mx-auto ">
+		<div class="flex box flex-col items-center">
+	<section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content relative">
+	<!-- <Audio Player Component /> -->
+	 
+	 	<h2 class="text-center">Audio Player Component</h2>
+		<AudioPlayer src="media/what-we-started(Original-Mix)-Don-Diablo.mp3">
+			I [work] in a boarding school, and so I know that most teachers take out their stress on students. If they don’t do their job right and are reprimanded, they take it out on their students. Students are almost treated like birds in a cage, and parents do not have a way to intervene effectively. I know of many examples of teachers beating children, and also of bullying in school.
+		</AudioPlayer>
+	
+		<VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/tibetan-primary-school.mp4" poster="media/tibetan-primary-school.png" id=""></VideoJS>
+	
+	</section>
+	
+	
+	</div>
+	</div>
+	
+
+	 <!-- <TheIndoctrination/> -->
+	 <Fnq/>
+	 
+
+</Layout>
