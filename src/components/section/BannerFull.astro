@@ -1,7 +1,9 @@
 ---
 import SpeakerMute from "../icons/speaker-mute.astro";
 import SpeakerUnMute from "../icons/speaker-unmute.astro";
+import WarningCard from "../WarningCard.astro";
 ---
+
 
 <div class="h-screen  bg-black relative  flex   items-center justify-around">
     
@@ -19,7 +21,6 @@ import SpeakerUnMute from "../icons/speaker-unmute.astro";
             </p>
         </div>
     </div>
-
     <div class="relative ">
         <video id="bannerVideo" class="w-[800px]" autoplay muted>
             <source src="media/banner-video.mp4" type="video/mp4">
@@ -42,7 +43,7 @@ import SpeakerUnMute from "../icons/speaker-unmute.astro";
   
     
 </div>
-
+<WarningCard/> 
 <script>
     import { gsap } from 'gsap';
     // Create a GSAP timeline
