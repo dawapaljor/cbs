@@ -1,6 +1,6 @@
 ---
 
-
+import SectionHeading from "../Section-Heading.astro"
 const featuredImage = 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzRrdWNrbzN2d3ZkODJ5OHl0cDNxbDJ6enF0c3h6Nzc5b2NhODc2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sdVWR1Mbb8VsCBKmVa/giphy.gif'
 const title = "INDOCTRINATION"
 const slug = "INDOCTRINATION"
@@ -15,12 +15,7 @@ const intro = ''
 
 <div class="w-screen mx-auto ">
  <div class="flex box flex-col items-center">
-    <div class="banner w-screen h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
-      <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center items-center">
-      <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
-      <!-- <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p> -->
-      </div>
-    </div>
+  <SectionHeading {title} {featuredImage}></SectionHeading>
 
 
     <section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content relative">
