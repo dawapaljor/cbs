@@ -1,6 +1,6 @@
 ---
 
-
+import SectionHeading from "../Section-Heading.astro";
 const featuredImage = 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGhwdm9mc25jOXg4djhjc25tMTZra2ljb255dDlxYjJ4azNudG81cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VWeYmlmIFJx3FbMjTv/giphy.gif'
 const title = "Boarding Preschools"
 const slug = "boarding-preschools"
@@ -42,12 +42,8 @@ const videoUrls = [
 
 <div class="w-screen mx-auto ">
  <div class="flex box flex-col items-center">
-  <div class="banner w-screen h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
-    <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center items-center">
-    <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
-    </div>
-  </div>
 
+  <SectionHeading {title} {featuredImage}></SectionHeading>
     <section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content ">  
           <p>In 2021, Tibet Action Institute released a landmark report that changed the global conversation on Tibet. Titled "Separated from Their Families, Hidden from the World," it was the first to expose the sheer scale of China's colonial boarding school system in Tibet—where over 800,000 Tibetan children were being torn from their homes and subjected to forced assimilation. The revelations sent shockwaves across the world, drawing sharp rebukes from international institutions and throwing a global spotlight back on Tibet for the first time in years.</p>
           <p>China responded with panic and propaganda. The government unleashed a sweeping disinformation campaign—staging tightly controlled tours, flooding media with glowing reports, and attempting to erase the truth with polished lies. But the truth is harder to bury.</p>
@@ -57,7 +53,7 @@ const videoUrls = [
     <section class="font-secondary max-w-7xl">
       <div 
         x-data="{ open: false, currentVideo: null }" 
-        class="text-gray-600 text-lg content grid grid-cols-3 gap-10 w-full cursor-pointer pb-10"
+        class="text-gray-600 text-lg content grid grid-col-1 md:grid-cols-3 gap-10 w-full cursor-pointer pb-10"
       >
         {videoUrls.map(video => (
           <div 

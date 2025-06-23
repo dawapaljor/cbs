@@ -1,7 +1,7 @@
 ---
 
 import QuotePrimary from '../widgets/QuotePrimary.astro';
-
+import SectionHeading from '../Section-Heading.astro';
 const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzdtN2h5bnNiZWE0eHR4Z2xsZHpwYmRlNTJjdnAyZmRneDl4OHI0ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zlPF1RO5oNmTe30TPN/giphy.gif'
 const title = "Abuse"
 const slug = "abuse-and-negligence"
@@ -33,12 +33,7 @@ const videoUrls = [
 ---
 <div class="w-screen mx-auto ">
   <div class="flex box flex-col items-center">
-     <div class="banner w-screen h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
-       <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center items-center">
-       <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
-       <!-- <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p> -->
-       </div>
-     </div>
+    <SectionHeading {title} {featuredImage}></SectionHeading>
  
  
 
@@ -46,7 +41,7 @@ const videoUrls = [
      <section class="font-secondary max-w-7xl p-10">
       <div 
         x-data="{ open: false, currentVideo: null }" 
-        class="text-gray-600 text-lg content grid grid-cols-3 gap-10 w-full cursor-pointer pb-10"
+        class="text-gray-600 text-lg content grid  grid-cols-1 md:grid-cols-3 gap-10 w-full cursor-pointer pb-10"
       >
         {videoUrls.map(video => (
           <div 

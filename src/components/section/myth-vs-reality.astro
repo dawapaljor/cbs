@@ -5,6 +5,8 @@ const title = "Myth VS Reality"
 const slug = "myth-vs-reality"
 const intro = ''
 import VideoJS from '../widgets/VideoJS.astro';
+import AudioPlayer from '../widgets/AudioPlayer.astro';
+import SectionHeading from '../Section-Heading.astro';
 ---
 <!-- {
 	docs.map(({ title,slug, Content }) => (
@@ -15,15 +17,10 @@ import VideoJS from '../widgets/VideoJS.astro';
 
 <div id="introduction" class="w-screen mx-auto ">
  <div class="flex box flex-col items-center">
-    <div class="banner w-screen h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
-      <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center items-center">
-      <h1 class=" text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
-      <!-- <p class=" w-1/2 font-Helv-Normal absolute text-3xl top-1/2 text-neutral-300">{intro}</p> -->
-      </div>
-    </div>
+  <SectionHeading {title} {featuredImage}></SectionHeading>
 
 
-    <section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content relative grid grid-cols-2 gap-3">
+    <section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content relative grid grid-col-1 md:grid-cols-2 gap-3">
 
         <div class="p-4 shadow-sm shadow-neutral-300 rounded-md">
             <h2 class="font-Helv-Bold pb-2">Tibetans call out Latvian propagandist working to cover China's Colonial Boarding Schools</h2>
@@ -52,7 +49,7 @@ import VideoJS from '../widgets/VideoJS.astro';
               <span><span class="text-green-700 font-bold">Reality:</span> These children have to sleep in filthy bunk beds and live in an unsanitary and hazardous environment</span>
           </div>
       </div>
-      
+
         <div class="p-4 shadow-sm shadow-neutral-300 rounded-md">
             <h2 class="font-Helv-Bold pb-2">China Says Tibetan Children Are Happy in State Boarding Schools</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/YOYWtZphARU?si=IKnN6jXucMrXmsPx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -75,6 +72,28 @@ import VideoJS from '../widgets/VideoJS.astro';
           </div>
       </div>
        
+    </section>
+
+
+    <section class="font-secondary  p-10 text-gray-600 text-lg content relative ">
+      <AudioPlayer src="media/what-we-started(Original-Mix)-Don-Diablo.mp3">
+            <p>Everything has changed so much. In schools, Tibetan is taught as a language, but only four times a week—one class per day. Everything else is taught in Mandarin, with five to six Mandarin classes each day. And I’m talking about primary schools.
+            </p>
+            <p>The children are like kids raised in foreign countries. They speak only in Mandarin, and while some still understand their parents communicating in Tibetan, they reply only in Mandarin. Children's primary language is becoming Mandarin, and in their daily conversations, they exclusively use Mandarin. They must stay at school from Monday to Friday. Parents pick up their children on Friday evening and return them to school on Sunday evening.</p>
+            <p>The state of the Tibetan language is alarming—the way kids read Tibetan is similar to how Chinese people read Tibetan. Nevertheless, Tibetans are making significant efforts to teach Tibetan to their children. Previously, there was a statue of Thomi Sambota in the school that was demolished, and portraits and posters in Tibetan around the school walls were removed.</p>
+            <p>When I last visited, there was a statue of Yuthok Yoten Gompo at the community hospital, but that had also been demolished. Religious symbols or texts such as the Kagyur or Tengyur are not allowed in schools. The school administration often states that "school is for education, not for religious purposes."</p>
+          </AudioPlayer>
+        
+        <AudioPlayer src="media/what-we-started(Original-Mix)-Don-Diablo.mp3">
+           <p>Regarding young monks, our monastery has a monastic school where students are taught the standard curriculum, including subjects like math and science. However, monks below the age of 12 or 13 are forced to attend district boarding schools. Tragically, two young monks from our monastery committed suicide after being forcibly taken to one of these schools.</p>
+          <p>Some young monks who are currently in school continue to wear their monastic robes, it seems because of repeated appeals from parents at various levels. Although, in the past there were notices forbidding them to visit their monasteries, yet they could still visit their monasteries. But, recently, they are completely banned to visit their monastery. Even, during school vacations, the monasteries even assign tutors to teach them subjects like Tibetan grammar and Sakya Lekshey. However, this was recently declared illegal, and those involved were summoned for interrogation and detained for one or two days in [the main city].</p>
+          <p>Students are also not allowed to visit monasteries, though many still do. For government officials, however, visiting a monastery is nearly impossible. Every monastery is under strict surveillance by a Monastic Management Committee, and there are CCTV cameras installed in every corner. The monitoring is constant and very strict.</p>  
+        </AudioPlayer>
+        
+        <AudioPlayer src="media/what-we-started(Original-Mix)-Don-Diablo.mp3">
+          <p>The most concerning issue is the current status of our language. It’s nothing like it used to be. They no longer recruit new teachers and have significantly reduced the number of existing ones—especially Tibetan language teachers. New recruitment has stopped entirely. Some are made to retire early, while others are kept on staff without any teaching responsibilities.</p>
+          <p>I used to feel happy when I visited my hometown, but this time was different—and deeply concerning. The level of sinicization is beyond comprehension. Even in [my hometown], having a basic conversation in Tibetan has become difficult, even for something as simple as hotel services.</p>
+        </AudioPlayer>
     </section>
 
     <!-- <div class=" w-screen h-80 bg-cover bg-fixed relative bg-red-400" >
