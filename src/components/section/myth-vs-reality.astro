@@ -4,6 +4,7 @@ const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJlaHN
 const title = "Myth VS Reality"
 const slug = "myth-vs-reality"
 const intro = ''
+import VideoJS from '../widgets/VideoJS.astro';
 ---
 <!-- {
 	docs.map(({ title,slug, Content }) => (
@@ -46,7 +47,7 @@ const intro = ''
             <h2 class="font-Helv-Bold pb-2">China Says Tibetan Children Are Happy in State Boarding Schools</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/YOYWtZphARU?si=IKnN6jXucMrXmsPx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="py-2">
-                <span><span class="text-red-700 font-bold">Myth:</span>China says Tibetans are happy in colonial boarding schools</span><br>
+                <span><span class="text-red-700 font-bold">Myth: </span>China says Tibetans are happy in colonial boarding schools</span><br>
                 <span><span class="text-green-700 font-bold">Reality:</span> Tibetan children are unhappy separated from their families and culture</span>
             </div>
             
@@ -57,10 +58,21 @@ const intro = ''
             <img src="media/children-bed.png" alt="children bed" class="w-full">
            
             <div class="py-2">
-                <span><span class="text-red-700 font-bold">Myth:</span>China says Tibetan children enjoy the best facilities</span><br>
+                <span><span class="text-red-700 font-bold">Myth: </span>China says Tibetan children enjoy the best facilities</span><br>
                 <span><span class="text-green-700 font-bold">Reality:</span> These children have to sleep in filthy bunk beds and live in an unsanitary and hazardous environment</span>
             </div>
         </div>
+        
+        <div class="p-4 shadow-sm shadow-neutral-300 rounded-md">
+          <h2 class="font-Helv-Bold pb-2">China Claims: Tibetan kids must study Math and science in Chinese</h2>
+          <VideoJS class="" src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/tibetan-primary-school.mp4" poster="media/tibetan-primary-school.png" id=""></VideoJS>
+
+         
+          <div class="py-2">
+              <span><span class="text-red-700 font-bold">Myth: </span>China says Tibetan children enjoy the best facilities</span><br>
+              <span><span class="text-green-700 font-bold">Reality:</span> These children have to sleep in filthy bunk beds and live in an unsanitary and hazardous environment</span>
+          </div>
+      </div>
        
     </section>
 
