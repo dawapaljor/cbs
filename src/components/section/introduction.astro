@@ -1,5 +1,5 @@
 ---
-
+import VideoJS from '../widgets/VideoJS.astro';
 import QuotePrimary from '../widgets/QuotePrimary.astro';
 import AudioPlayer from '../widgets/AudioPlayer.astro';
 const featuredImage = 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJlaHNhM3ZkM2Jjazdyazk1NnR4M2J1MmQ4bG05ZzAycGJ3bG9wcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cff40zpKacFFDJkLeh/giphy.gif'
@@ -29,15 +29,22 @@ const intro = 'This website is the interactive extension of our second major rep
           <p>
             In 2021, Tibet Action Institute released a landmark report that changed the global conversation on Tibet. Titled “Separated from Their Families, Hidden from the World,” it was the first to expose the sheer scale of China’s colonial boarding school system in Tibet—where over 800,000 Tibetan children were being torn from their homes and subjected to forced assimilation. The revelations sent shockwaves across the world, drawing sharp rebukes from international institutions and throwing a global spotlight back on Tibet for the first time in years.
           </p>
-        <AudioPlayer src="media/what-we-started(Original-Mix)-Don-Diablo.mp3">
+        <!-- <AudioPlayer src="media/what-we-started(Original-Mix)-Don-Diablo.mp3">
           I [work] in a boarding school, and so I know that most teachers take out their stress on students. If they don’t do their job right and are reprimanded, they take it out on their students. Students are almost treated like birds in a cage, and parents do not have a way to intervene effectively. I know of many examples of teachers beating children, and also of bullying in school.
         </AudioPlayer>
         
         <AudioPlayer src="media/what-we-started(Original-Mix)-Don-Diablo.mp3">
           Students are restricted from wearing any religious/prayer threads around their necks and wrists and chanting Tibetan prayers. If the students are found chanting prayers and wearing any religious/prayer threads, they are beaten by the teacher
-        </AudioPlayer>
-       
+        </AudioPlayer> -->
+
+        <div class="grid  gap-5 grid-cols-2">
+          <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/propaganda-song.mp4" poster="media/tibetan-primary-school.png" id=""></VideoJS>
+          <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/red-track-suits.mp4" poster="media/tibetan-primary-school.png" id=""></VideoJS>
+        </div>
+       <img src="media/map-of-tibet.png" alt="">
     </section>
+
+
 
     <!-- <div class=" w-screen h-80 bg-cover bg-fixed relative bg-red-400" >
       <div class="w-full h-full absolute flex  justify-center bg-neutral-900">

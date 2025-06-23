@@ -9,6 +9,12 @@ import BannerTriangle from "../components/BannerTriangle.astro"
 import Navbar from "../components/Navbar.astro";
 import BannerFull from "../components/section/BannerFull.astro";
 import Banner from "../components/Banner.astro";
+
+const title ="When They Came to Take Our Children"
+const subtitle = "China's Colonial Boarding Schools and the Future of Tibet"
+const image ="https://colonial-boarding-school.netlify.app/banner.jpg"
+const url ="https://colonial-boarding-school.netlify.app/"
+const description = ""
 ---
 
 
@@ -20,6 +26,21 @@ import Banner from "../components/Banner.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link type="text/css" rel="stylesheet" href="../node_modules/video.js/dist/video-js.min.css" />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={url} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		
 		<title>When They Came to Take Our Children</title>
 		<ClientRouter />
 		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
