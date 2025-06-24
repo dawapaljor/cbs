@@ -21,6 +21,6 @@
         "videojs-youtube": "^3.0.1"
     },
     "devDependencies": {
-        "video.js": "^8.22.0"
+        "video.js": "^8.23.3"
     }
 }

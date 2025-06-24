@@ -5,17 +5,16 @@ import WarningCard from "../WarningCard.astro";
 ---
 
 
-<div class="h-screen  bg-black relative  flex   items-center justify-around">
+<div class="h-screen  bg-black relative sm:grid md:flex  items-center justify-around ">
     
-    <div class="flex-col  p-20 justify-baseline items-baseline  w-1/2 font-Helv-Normal z-20">
-        <h1 class="text-5xl uppercase font-extrabold text-neutral-100  p-5 opacity-0 font-Helv-Bold" id="banner-title">"When They Came to Take Our Children"</h1>
-        <h2 class="text-2xl  text-neutral-100 px-5 opacity-0 pb-10" id="banner-subtitle">China's Colonial Boarding Schools and the Future of Tibet</h2>
-
+    <div class="flex-col  sm:p-5 md:p-20 justify-baseline items-baseline sm:w-full md:w-1/2 font-Helv-Normal z-20">
+        <h1 class="text-3xl md:text-5xl uppercase font-extrabold text-neutral-100  p-5 opacity-0 font-Helv-Bold" id="banner-title">"When They Came to Take Our Children"</h1>
+        <h2 class="text-xl md:text-2xl  text-neutral-100 px-5 opacity-0 pb-10" id="banner-subtitle">China's Colonial Boarding Schools and the Future of Tibet</h2>
         <a href="#" class="text-md p-3  text-neutral-100   items-center  z-10 ">
             <span class="px-2 uppercase underline underline-offset-8 hover:text-neutral-300 ">Read The Report</span>
         </a>
         <!-- <p class="  text-neutral-900 opacity-0 " id="banner-by">Report By</p> -->
-        <div class="flex-col items-center justify-around pt-40 ">
+        <div class="flex-col items-center justify-around pt-40 hidden md:flex">
             <p class="text-neutral-900 opacity-0" id="banner-logo">
                 <a href="https://tibetaction.net" target="_blank"><img src="tai-logo.png" class="w-50"/></a>
             </p>
@@ -43,7 +42,7 @@ import WarningCard from "../WarningCard.astro";
          <img src="dollar.svg"  class="w-10 "/> 
     </a> -->
   
-    <WarningCard/>
+    <!-- <WarningCard/> -->
 </div>
  
 <script>

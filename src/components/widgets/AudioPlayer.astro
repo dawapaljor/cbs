@@ -1,12 +1,12 @@
 ---
-const {src} = Astro.props;
+const {src,tib,format} = Astro.props;
 ---
 <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/tailwind-audio/+esm"></script>
 
-<div class="w-full flex items-center justify-center py-5">
-  <div class="flex-col   border-2  border-neutral-300 w-1/2 self-center">
-    <div class="text-neutral-600 bg-neutral-200 text-lg ">
-      <p class=""><slot/></p>
+<div class="w-full py-5 audio-player-container">
+  <div class="flex-col   border-2  border-neutral-300 self-center">
+    <div class="text-neutral-600 bg-neutral-200 text-lg transcript">
+      <slot/>
     </div>
       <media-theme-tailwind-audio 
         style="--media-primary-color: #ffa200; --media-secondary-color: #cccccc;"
@@ -18,6 +18,7 @@ const {src} = Astro.props;
           crossorigin="anonymous"
         ></video>
       </media-theme-tailwind-audio>
+
   </div>
 </div>
 
@@ -26,3 +27,5 @@ const {src} = Astro.props;
 
 
 <!-- https://player.style/themes/sutro-audio?primary-color=ffa200&secondary-color=cccccc&media=videojs -->
+
+  
