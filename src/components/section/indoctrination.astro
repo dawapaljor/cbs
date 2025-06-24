@@ -1,4 +1,5 @@
 ---
+import VideoJS from "../widgets/VideoJS.astro"
 import AudioPlayer from "../widgets/AudioPlayer.astro"
 import SectionHeading from "../Section-Heading.astro"
 const featuredImage = 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzRrdWNrbzN2d3ZkODJ5OHl0cDNxbDJ6enF0c3h6Nzc5b2NhODc2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sdVWR1Mbb8VsCBKmVa/giphy.gif'
@@ -55,6 +56,11 @@ const intro = ''
         <p>English Audio</p>
       </AudioPlayer>
       
+      </div>
+
+      <div class="grid  gap-10 grid-cols-2 py-5">
+        <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/propaganda-song.mp4"  id=""></VideoJS>
+        <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/red-track-suits.mp4"  id=""></VideoJS>
       </div>
     </section>
 
