@@ -1,0 +1,277 @@
+---
+const { src,caption } = Astro.props;
+import PlayIcon from "../icons/play-icon.svg?raw"
+import PauseIcon from "../icons/pause-icon.svg?raw"
+---
+<!-- <div class="w-full flex flex-col items-center">
+  <canvas id="waveform" class="w-full h-20 bg-gray-200 rounded mb-4 cursor-pointer" height="128"></canvas>
+  <div class="w-full flex flex-col items-center">
+    <div class="flex items-center w-full mb-2">
+      <button id="playPause" class="mr-4 p-2 rounded-full bg-orange-400 hover:bg-orange-500 text-white focus:outline-none">
+        <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-6.518-3.89A1 1 0 007 8.618v6.764a1 1 0 001.234.97l6.518-1.878A1 1 0 0016 13.382V10.618a1 1 0 00-1.248-.95z" /></svg>
+        <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6" /></svg>
+      </button>
+      <span id="currentTime" class="text-sm font-mono text-gray-700 mr-2">0:00</span>
+      <span id="duration" class="text-sm font-mono text-gray-700 ml-2">0:00</span>
+    </div>
+    <audio id="audio" class="hidden">
+      <source src={src} type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
+<script is:inline>
+  const audio = document.getElementById('audio');
+  const canvas = document.getElementById('waveform');
+  const ctx = canvas.getContext('2d');
+  let waveformData = null;
+
+  // Custom controls
+  const playPauseBtn = document.getElementById('playPause');
+  const playIcon = document.getElementById('playIcon');
+  const pauseIcon = document.getElementById('pauseIcon');
+  const currentTimeEl = document.getElementById('currentTime');
+  const durationEl = document.getElementById('duration');
+
+  playPauseBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+
+  audio.addEventListener('play', () => {
+    playIcon.classList.add('hidden');
+    pauseIcon.classList.remove('hidden');
+  });
+  audio.addEventListener('pause', () => {
+    playIcon.classList.remove('hidden');
+    pauseIcon.classList.add('hidden');
+  });
+
+  // Add waveform seeking
+  canvas.addEventListener('click', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const percent = x / canvas.width;
+    audio.currentTime = percent * audio.duration;
+    drawWaveform(percent);
+  });
+
+  function formatTime(sec) {
+    if (isNaN(sec)) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
+
+  audio.addEventListener('timeupdate', () => {
+    const percent = (audio.currentTime / audio.duration) || 0;
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+    drawWaveform(percent);
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    durationEl.textContent = formatTime(audio.duration);
+    currentTimeEl.textContent = formatTime(0);
+    drawWaveform(0);
+  });
+
+  // Draw waveform
+  function drawWaveform(progress = 0) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (!waveformData) return;
+    const { peaks, length } = waveformData;
+    const width = canvas.width;
+    const height = canvas.height;
+    const playedWidth = Math.floor(width * progress);
+    // Enlarge the wave: scale peaks to fill more of the canvas
+    const amplitude = 0.95; // 1.0 = max, 0.5 = half
+    // Draw played part
+    ctx.fillStyle = '#f59e42'; // orange-400
+    for (let x = 0; x < playedWidth; x++) {
+      const peak = peaks[Math.floor(x / width * length)] * amplitude;
+      const y = (1 - peak) * height / 2;
+      ctx.fillRect(x, y, 1, height - 2 * y);
+    }
+    // Draw unplayed part
+    ctx.fillStyle = '#a3a3a3'; // gray-400
+    for (let x = playedWidth; x < width; x++) {
+      const peak = peaks[Math.floor(x / width * length)] * amplitude;
+      const y = (1 - peak) * height / 2;
+      ctx.fillRect(x, y, 1, height - 2 * y);
+    }
+  }
+
+  // Extract waveform data
+  async function getWaveformData(url) {
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+    const rawData = audioBuffer.getChannelData(0);
+    const samples = 200; // Number of peaks
+    const blockSize = Math.floor(rawData.length / samples);
+    const peaks = [];
+    for (let i = 0; i < samples; i++) {
+      let sum = 0;
+      for (let j = 0; j < blockSize; j++) {
+        sum += Math.abs(rawData[i * blockSize + j]);
+      }
+      peaks.push(sum / blockSize);
+    }
+    return { peaks, length: samples };
+  }
+
+  // Resize canvas to match container
+  function resizeCanvas() {
+    const container = canvas.parentElement;
+    canvas.width = container.offsetWidth;
+    drawWaveform(audio.currentTime / audio.duration || 0);
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+
+  (async () => {
+    waveformData = await getWaveformData(audio.querySelector('source').src);
+    resizeCanvas();
+  })();
+</script> -->
+
+
+<audio id="myAudio" src={src} class="hidden "></audio>
+  <div class=" bg-neutral-100 rounded-2xl my-10 p-5 ">
+    <h2>{caption}</h2>
+    <div class="flex items-center gap-4  ">
+      <button id="playPauseBtn" class="w-12 h-12 rounded-full   text-2xl flex items-center justify-center  duration-200 focus:outline-none">
+        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z" fill="#1C274C"/>
+            </svg>
+      </button>
+      <canvas id="waveform" width="600"  height="50" class="w-30 md:w-full rounded-2xl block"></canvas>
+      <div class="flex items-center gap-1 text-sm font-mono text-neutral-500 w-28 justify-end">
+        <span id="currentTime" class="w-10 text-right">0:00</span>
+        <span>/</span>
+        <span id="duration" class="w-10 text-left">0:00</span>
+      </div>
+    </div>
+  </div>
+
+    <script define:vars={{ playIconHTML: PlayIcon, pauseIconHTML: PauseIcon }}>
+        const myAudio = document.getElementById('myAudio');
+        const canvas = document.getElementById('waveform');
+        const ctx = canvas.getContext('2d');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        let isPlaying = false;
+
+        // Set up Web Audio API
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const source = audioCtx.createMediaElementSource(myAudio);
+        const analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 2048;
+        const bufferLength = analyser.fftSize;
+        const dataArray = new Uint8Array(bufferLength);
+
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
+
+        function formatTime(sec) {
+            if (isNaN(sec)) return '0:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        // Function to draw the initial waveform
+        function drawInitialWaveform() {
+            analyser.getByteTimeDomainData(dataArray);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#1c274c';
+            ctx.beginPath();
+
+            const sliceWidth = canvas.width * 1.0 / bufferLength;
+            let x = 0;
+
+            for (let i = 0; i < bufferLength; i++) {
+                const v = dataArray[i] / 128.0;
+                const y = v * canvas.height / 2;
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+                x += sliceWidth;
+            }
+            ctx.lineTo(canvas.width, canvas.height / 2);
+            ctx.stroke();
+        }
+
+        // Draw the initial waveform once the audio can be played
+        myAudio.addEventListener('canplay', drawInitialWaveform, { once: true });
+
+        function draw() {
+            if (!isPlaying) return;
+            requestAnimationFrame(draw);
+            analyser.getByteTimeDomainData(dataArray);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#1c274c';
+            ctx.beginPath();
+
+            const sliceWidth = canvas.width * 1.0 / bufferLength;
+            let x = 0;
+
+            for (let i = 0; i < bufferLength; i++) {
+                const v = dataArray[i] / 128.0;
+                const y = v * canvas.height / 2;
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+                x += sliceWidth;
+            }
+            ctx.lineTo(canvas.width, canvas.height / 2);
+            ctx.stroke();
+        }
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            if (myAudio.paused) {
+                myAudio.play();
+            } else {
+                myAudio.pause();
+            }
+        });
+
+        myAudio.addEventListener('play', () => {
+            isPlaying = true;
+            playPauseBtn.innerHTML = pauseIconHTML;
+            draw();
+        });
+        myAudio.addEventListener('pause', () => {
+            isPlaying = false;
+            playPauseBtn.innerHTML = playIconHTML;
+        });
+        myAudio.addEventListener('ended', () => {
+            isPlaying = false;
+            playPauseBtn.innerHTML = playIconHTML;
+        });
+
+        myAudio.addEventListener('timeupdate', () => {
+            currentTimeEl.textContent = formatTime(myAudio.currentTime);
+        });
+
+        myAudio.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(myAudio.duration);
+        });
+    </script>

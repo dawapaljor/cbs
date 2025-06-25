@@ -5,7 +5,7 @@ const title = "Myth VS Reality"
 const slug = "myth-vs-reality"
 const intro = ''
 import VideoJS from '../widgets/VideoJS.astro';
-import AudioPlayer from '../widgets/AudioPlayer.astro';
+import AudioWavePlayer from '../widgets/AudioWavePlayer.astro';
 import SectionHeading from '../Section-Heading.astro';
 ---
 <!-- {
@@ -76,15 +76,14 @@ import SectionHeading from '../Section-Heading.astro';
     </section>
 
 
-    <section class="font-secondary max-w-7xl p-10 text-gray-600 text-lg content relative ">
+    <section class="font-secondary  text-gray-600 text-lg content relative ">
       
         
        
         
-        <AudioPlayer src="media/audio/audio3-eng.mp3" >
-          <p>The most concerning issue is the current status of our language. It's nothing like it used to be. They no longer recruit new teachers and have significantly reduced the number of existing ones—especially Tibetan language teachers. New recruitment has stopped entirely. Some are made to retire early, while others are kept on staff without any teaching responsibilities.</p>
-          <p>I used to feel happy when I visited my hometown, but this time was different—and deeply concerning. The level of sinicization is beyond comprehension. Even in [my hometown], having a basic conversation in Tibetan has become difficult, even for something as simple as hotel services.</p>
-        </AudioPlayer>
+        <AudioWavePlayer src="media/audio/audio3-eng.mp3" caption="audio caption" >
+          
+        </AudioWavePlayer>
   
     </section>
 
