@@ -5,8 +5,8 @@ import WarningCard from "../WarningCard.astro";
 ---
 
 
-<div class="h-screen  bg-black relative sm:grid md:flex  items-center justify-around ">
-    
+<div class="h-screen  bg-black relative sm:grid md:flex  items-center justify-around bg-[url(banner.jpg)] bg-repeat-round bg-fixed">
+    <div class="w-full h-lvh bg-neutral-950/80 absolute"></div>
     <div class="flex-col  sm:p-5 md:p-20 justify-baseline items-baseline sm:w-full md:w-1/2 font-Helv-Normal z-20">
         <h1 class="text-3xl md:text-5xl uppercase font-extrabold text-neutral-100  p-5 opacity-0 font-Helv-Bold" id="banner-title">"When They Came to Take Our Children"</h1>
         <h2 class="text-xl md:text-2xl  text-neutral-100 px-5 opacity-0 pb-10" id="banner-subtitle">China's Colonial Boarding Schools and the Future of Tibet</h2>
@@ -42,7 +42,7 @@ import WarningCard from "../WarningCard.astro";
          <img src="dollar.svg"  class="w-10 "/> 
     </a> -->
   
-    <!-- <WarningCard/> -->
+    <WarningCard/>
 </div>
  
 <script>
