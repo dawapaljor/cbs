@@ -1,9 +1,9 @@
 ---
 const {featuredImage,title} = Astro.props;
 ---
-<div class="banner w-screen h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
+<div class="banner w-screen h-[400px] md:h-[600px] bg-cover bg-fixed relative"  style=`background-image:url(${featuredImage})`>
     <div class="w-full h-full bg-neutral-900/80 absolute flex  justify-center items-center">
-    <h1 class="text-xl md:text-9xl uppercase font-Helv-Bold text-white  text-center ">{title}</h1>
+    <h1 class="text-5xl md:text-7xl lg:text-9xl uppercase font-Helv-Bold text-white text-center p-4">{title}</h1>
     
     </div>
   </div>
