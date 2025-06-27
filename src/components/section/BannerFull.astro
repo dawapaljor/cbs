@@ -7,15 +7,20 @@ import WarningCard from "../WarningCard.astro";
 
 <div class="h-screen relative sm:grid md:flex  items-center justify-around bg-[url(/banner.jpg)] bg-repeat-round bg-fixed">
     <div class="w-full h-lvh bg-neutral-950/80 absolute"></div>
-    <div class="flex-col  sm:p-5 md:p-20 justify-baseline items-baseline sm:w-full md:w-1/2 font-Helv-Normal z-20">
-        <p class="text-neutral-900 opacity-0" id="banner-logo">
-            <a href="https://tibetaction.net" target="_blank"><img src="tai-logo.png" class="w-50"/></a>
+    <div class="flex-col sm:p-5 md:p-20  sm:w-full md:w-1/2 font-Helv-Normal z-30">
+        <p class="text-neutral-900 opacity-0 flex justify-center md:justify-normal" id="banner-logo">
+            <a href="https://tibetaction.net" target="_blank"><img src="tai-logo.png" class=" w-30 md:w-50"/></a>
         </p>
-        <h1 class="text-3xl md:text-5xl uppercase font-extrabold text-neutral-100  p-5 opacity-0 font-Helv-Bold" id="banner-title">"When They Came to Take Our Children"</h1>
-        <h2 class="text-xl md:text-2xl  text-neutral-100 px-5 opacity-0 pb-10" id="banner-subtitle">China's Colonial Boarding Schools and the Future of Tibet</h2>
-        <a href="#" class="text-md p-3  text-neutral-100   items-center  z-10 ">
-            <span class="px-2 uppercase underline underline-offset-8 hover:text-neutral-300 ">Read The Report</span>
-        </a>
+        
+
+        <h1 class="text-3xl md:text-5xl uppercase font-extrabold text-neutral-100  p-5 opacity-0 font-Helv-Bold text-center md:text-left" id="banner-title">"When They Came to Take Our Children"</h1>
+        <h2 class="text-xl md:text-2xl  text-neutral-100 px-5 opacity-0 md:pb-10 text-center md:text-left" id="banner-subtitle">China's Colonial Boarding Schools and the Future of Tibet</h2>
+       
+        <div id="read-report-link" class="text-md p-3 text-neutral-100  bottom-20 opacity-0 text-center md:text-left">
+            <a href="https://tibetaction.net" class="px-2 uppercase underline underline-offset-8 hover:text-neutral-300 ">
+            <p>Read The Report</p></a>
+        </div>
+       
         <!-- <p class="  text-neutral-900 opacity-0 " id="banner-by">Report By</p> -->
         <!-- <div class="flex-col items-center justify-around pt-40 hidden md:flex">
             <p class="text-neutral-900 opacity-0" id="banner-logo">
@@ -23,7 +28,7 @@ import WarningCard from "../WarningCard.astro";
             </p>
             
         </div> -->
-        
+       
     </div>
     <div class="relative flex items-center justify-center ">
         <div class="relative inline-block group">
@@ -78,6 +83,11 @@ import WarningCard from "../WarningCard.astro";
         "-=0.3"
     )
     .fromTo("#banner-logo",
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=0.3"
+    )
+    .fromTo("#read-report-link",
         { y: -50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8 },
         "-=0.3"
