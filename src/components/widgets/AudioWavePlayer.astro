@@ -159,7 +159,7 @@ import PauseIcon from "../icons/pause-icon.svg?raw"
     </div>
   </div>
 
-    <script define:vars={{ playIconHTML: PlayIcon, pauseIconHTML: PauseIcon, id }}>
+    <!-- <script define:vars={{ playIconHTML: PlayIcon, pauseIconHTML: PauseIcon, id }}>
         const myAudio = document.getElementById('myAudio-' + id);
         const canvas = document.getElementById('waveform-' + id);
         const ctx = canvas.getContext('2d');
@@ -273,5 +273,5 @@ import PauseIcon from "../icons/pause-icon.svg?raw"
 
         myAudio.addEventListener('loadedmetadata', () => {
             durationEl.textContent = formatTime(myAudio.duration);
-        });
+        }); -->
     </script>
