@@ -1,7 +1,7 @@
 ---
 import SectionHeading from '../Section-Heading.astro';
 
-import VideoJS from '../widgets/VideoJS.astro';
+import VideoJS from '../widgets/VideoJS.jsx';
 const featuredImage = 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzRrdWNrbzN2d3ZkODJ5OHl0cDNxbDJ6enF0c3h6Nzc5b2NhODc2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sdVWR1Mbb8VsCBKmVa/giphy.gif'
 const title = "Three Mega Schools"
 const slug = "three-mega-schools"
@@ -21,9 +21,9 @@ const intro = ''
 
     <section class=" font-secondary max-w-7xl p-10 text-gray-600 text-lg content relative w-full">
       
-        <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/tibetan-primary-school.mp4" poster="media/tibetan-primary-school.png" id="tibetan-primary-school"></VideoJS>
+        <VideoJS client:only="react" src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/tibetan-primary-school.mp4" poster="media/tibetan-primary-school.png" id="tibetan-primary-school" />
         <br><br><br>
-        <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Kandzedrone.mp4" poster="media/kandzedrone.png" id="kandzedrone"></VideoJS>
+        <VideoJS client:only="react" src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Kandzedrone.mp4" poster="media/kandzedrone.png" id="kandzedrone" />
 
     </section>
 
