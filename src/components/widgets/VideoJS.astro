@@ -9,30 +9,32 @@ import '../../styles/video.css';
 import '@videojs/themes/dist/forest/index.css';
 // Sea
 import '@videojs/themes/dist/sea/index.css';
+import videojs from 'video.js';
 const {src,poster,id} = Astro.props
 ---
 
 <video
   id={id}
-  data-videojs-id={id}
-  controls
   class="video-js vjs-theme-city vjs-fluid"
   poster={poster}
+  controls
   data-setup="{}"
+  data-videojs-id={id}
 >
   <source src={src} type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
 <script type="text/javascript">
-  if (typeof window !== "undefined") {
-    import('video.js').then(({ default: videojs }) => {
-      const videoElement = document.querySelector('[data-videojs-id]');
-      if (videoElement) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const videoElement = document.querySelector('[data-videojs-id]');
+    if (videoElement) {
+      // @ts-ignore
+      import('video.js').then(({ default: videojs }) => {
         videojs(videoElement);
-      }
-    });
-  }
+      });
+    }
+  });
 </script>
 
 <!--  
