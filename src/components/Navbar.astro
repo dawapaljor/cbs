@@ -5,12 +5,12 @@ const {title} = Astro.props;
 
 const menuItems = [
   { name: "Introduction", href: "#introduction" },
-  { name: "Boarding Preschools", href: "boarding-preschoolsy" },
+  { name: "Boarding Preschools", href: "#boarding-preschool" },
   { name: "Indoctrination", href: "#indoctrination" },
   { name: "Abuse", href: "#abuse" },
-  { name: "Press Releases", href: "#press-releases" },
+  { name: "Three Mega Schools", href: "#three-mega-schools" },
   { name: "Myth V/S Reality ", href: "#myth-vs-reality" },
-  { name: "Resistance ", href: "#resistance" },
+  // { name: "Resistance ", href: "#resistance" },
   { name: "FAQ ", href: "#FAQ" },
   
 ];
@@ -18,9 +18,8 @@ const menuItems = [
 ---
 <!-- drawer init and show -->
 <div class="text-center  bottom-5 right-5 fixed z-40"  data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-    <button class=" text-white bg-slate-700/40 hover:bg-slate-800 focus:ring-4   rounded-lg text-sm px-2.5 py-2.5 dark:bg-neutral-600 dark:hover:bg-neutral-700 focus:outline-none  transition-transform" >
+    <button class=" text-white bg-slate-700/40 hover:bg-slate-500 focus:ring-4   rounded-lg text-sm px-2.5 py-2.5  focus:outline-none  transition-transform" >
         <BurgerMenu /> 
-        
     </button>
  </div>
  
