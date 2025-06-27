@@ -1,5 +1,5 @@
 ---
-const { src,caption } = Astro.props;
+const { src,caption,id } = Astro.props;
 import PlayIcon from "../icons/play-icon.svg?raw"
 import PauseIcon from "../icons/pause-icon.svg?raw"
 ---
@@ -140,32 +140,32 @@ import PauseIcon from "../icons/pause-icon.svg?raw"
 </script> -->
 
 
-<audio id="myAudio" src={src} class="hidden "></audio>
+<audio id={`myAudio-${id}`} src={src} class="hidden "></audio>
   <div class=" bg-neutral-100 rounded-2xl my-10 p-5 ">
     <h2>{caption}</h2>
     <div class="flex items-center gap-4  ">
-      <button id="playPauseBtn" class="w-12 h-12 rounded-full   text-2xl flex items-center justify-center  duration-200 focus:outline-none">
+      <button id={`playPauseBtn-${id}`} class="w-12 h-12 rounded-full   text-2xl flex items-center justify-center  duration-200 focus:outline-none">
         <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z" fill="#1C274C"/>
             </svg>
       </button>
-      <canvas id="waveform" width="600"  height="50" class="w-30 md:w-full rounded-2xl block"></canvas>
+      <canvas id={`waveform-${id}`} width="600"  height="50" class="w-30 md:w-full rounded-2xl block"></canvas>
       <div class="flex items-center gap-1 text-sm font-mono text-neutral-500 w-28 justify-end">
-        <span id="currentTime" class="w-10 text-right">0:00</span>
+        <span id={`currentTime-${id}`} class="w-10 text-right">0:00</span>
         <span>/</span>
-        <span id="duration" class="w-10 text-left">0:00</span>
+        <span id={`duration-${id}`} class="w-10 text-left">0:00</span>
       </div>
     </div>
   </div>
 
-    <script define:vars={{ playIconHTML: PlayIcon, pauseIconHTML: PauseIcon }}>
-        const myAudio = document.getElementById('myAudio');
-        const canvas = document.getElementById('waveform');
+    <script define:vars={{ playIconHTML: PlayIcon, pauseIconHTML: PauseIcon, id }}>
+        const myAudio = document.getElementById('myAudio-' + id);
+        const canvas = document.getElementById('waveform-' + id);
         const ctx = canvas.getContext('2d');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const currentTimeEl = document.getElementById('currentTime');
-        const durationEl = document.getElementById('duration');
+        const playPauseBtn = document.getElementById('playPauseBtn-' + id);
+        const currentTimeEl = document.getElementById('currentTime-' + id);
+        const durationEl = document.getElementById('duration-' + id);
         let isPlaying = false;
 
         // Set up Web Audio API

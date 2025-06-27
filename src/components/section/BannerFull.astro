@@ -22,20 +22,22 @@ import WarningCard from "../WarningCard.astro";
         </div>
         
     </div>
-    <div class="relative ">
-        <video id="bannerVideo" class="w-[700px]" autoplay muted>
-            <source src="media/banner-video.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        
-        <button id="muteBtn" class="w-full  rounded px-3 flex justify-center items-center">
-            <span id="muteIcon">
-                <SpeakerMute/>
-            </span>
-            <span id="unmuteIcon" style="display:none;">
-                <SpeakerUnMute/>
-            </span>
-        </button>
+    <div class="relative flex items-center justify-center ">
+        <div class="relative inline-block group">
+            <video id="bannerVideo" class="md:w-[700px] w-60" autoplay muted>
+                <source src="media/banner-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-300 z-30 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto overlap-btn">
+                <span id="muteIcon">
+                    <SpeakerMute/>
+                </span>
+                <span id="unmuteIcon" style="display:none;">
+                    <SpeakerUnMute/>
+                </span>
+            </button>
+            <div class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-20 group-hover:opacity-100"></div>
+        </div>
     </div>
     <!-- <a href="https://tibetaction.net/support/" target="_blank" class="text-md bg-amber-300  top-0 left-15 p-3 pt-10 text-neutral-800  font-bold flex items-center fixed shadow-md z-10">
         <span class="px-2">DONATE NOW</span>
@@ -79,7 +81,7 @@ import WarningCard from "../WarningCard.astro";
     );
 
     const video = document.getElementById('bannerVideo') as HTMLVideoElement | null;
-    const muteBtn = document.getElementById('muteBtn');
+    const muteBtn = document.querySelector('.overlap-btn');
     const muteIcon = document.getElementById('muteIcon');
     const unmuteIcon = document.getElementById('unmuteIcon');
 

@@ -1,6 +1,7 @@
 ---
 import VideoJS from "../widgets/VideoJS.astro"
 import AudioPlayer from "../widgets/AudioPlayer.astro"
+import AudioWavePlayer from "../widgets/AudioWavePlayer.astro"
 import SectionHeading from "../Section-Heading.astro"
 const featuredImage = 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzRrdWNrbzN2d3ZkODJ5OHl0cDNxbDJ6enF0c3h6Nzc5b2NhODc2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sdVWR1Mbb8VsCBKmVa/giphy.gif'
 const title = "INDOCTRINATION"
@@ -21,14 +22,14 @@ const intro = ''
 
 
     <section class=" font-secondary max-w-7xl  text-gray-600 text-lg content relative">
-         
-        <AudioPlayer src="media/audio/audio1.m4a" >
-          
-      </AudioPlayer>
+      <AudioWavePlayer src="media/audio/audio-ty.m4a" caption="The Decline of Tibetan Language in State-Controlled Schools" id="audio-1"></AudioWavePlayer>
+        <!-- <AudioPlayer src="media/audio/audio1.m4a" >  
+        </AudioPlayer> -->
 
       <div class="">
-        
-      <AudioPlayer src="media/audio/audio3-eng.mp3" >
+        <AudioWavePlayer src="media/audio/audio-pk-bo.mp3" caption="When Tibetan Becomes a Foreign Tongue (Tibetan Voice)" id="audio-3-bo"></AudioWavePlayer>
+        <AudioWavePlayer src="media/audio/audio-pk-eng.mp3" caption="When Tibetan Becomes a Foreign Tongue (English Voice)" id="audio-en"></AudioWavePlayer>
+      <!-- <AudioPlayer src="media/audio/audio3-eng.mp3" >
         
         <p>Tibetan Audio</p>
         <media-theme-tailwind-audio 
@@ -42,11 +43,12 @@ const intro = ''
           ></video>
         </media-theme-tailwind-audio>
         <p>English Audio</p>
-      </AudioPlayer>
+      </AudioPlayer> -->
       
       </div>
 
       <div class="grid  gap-10 md:grid-cols-2  py-5">
+        
         <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/propaganda-song.mp4"  id=""></VideoJS>
         <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/red-track-suits.mp4"  id=""></VideoJS>
 
