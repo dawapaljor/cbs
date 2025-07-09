@@ -21,56 +21,31 @@ const intro = ''
  <div class="flex box flex-col items-center">
   <SectionHeading {title} {featuredImage}></SectionHeading>
 
-
     <section class=" font-secondary max-w-7xl  text-gray-600 text-lg content relative">
       <AudioWavePlayer src="media/audio/audio-ty.m4a" caption="The Decline of Tibetan Language in State-Controlled Schools" id="audio-1"></AudioWavePlayer>
         <!-- <AudioPlayer src="media/audio/audio1.m4a" >  
         </AudioPlayer> -->
-
       <div class="">
         <AudioWavePlayer src="media/audio/audio-pk-bo.mp3" caption="When Tibetan Becomes a Foreign Tongue (Tibetan Voice)" id="audio-3-bo"></AudioWavePlayer>
         <AudioWavePlayer src="media/audio/audio-pk-eng.mp3" caption="When Tibetan Becomes a Foreign Tongue (English Voice)" id="audio-en"></AudioWavePlayer>
-      <!-- <AudioPlayer src="media/audio/audio3-eng.mp3" >
-        
-        <p>Tibetan Audio</p>
-        <media-theme-tailwind-audio 
-          style="--media-primary-color: #ffa200; --media-secondary-color: #cccccc;"
-        style="width:100%">
-          <video
-            slot="media"
-            src="media/audio/audio3-tib.mp3"
-            playsinline
-            crossorigin="anonymous"
-          ></video>
-        </media-theme-tailwind-audio>
-        <p>English Audio</p>
-      </AudioPlayer> -->
-      
       </div>
+    </section>
 
-      <div class="grid  gap-10 md:grid-cols-2  py-5">
-        
+    <section class=" font-secondary max-w-7xl p-5 md:p-10 text-gray-600 text-xl content relative w-full">
+     
+      <div class="grid  gap-10 md:grid-cols-2  py-5"> 
         <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/propaganda-song.mp4" poster="media/propaganda-song.png" id="probaganda-song"></VideoJS>
         <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/red-track-suits.mp4" poster="media/red-suits.png"  id="red-track-suits"></VideoJS>
-
         <div>
           <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/Daughterandmorthersupermarket.mp4" poster="media/daughtermothersupermarket.jpg"  id="daughtermothersupermarket"></VideoJS>
           <p class="text-sm font-Helv-Normal text-center">New York Times from Douyin</p>
         </div>
-        
         <VideoJS src="https://tai-web-video.s3.us-east-1.amazonaws.com/preschool-boarding/Can'tspeaktibetan.mp4" poster="media/Can'tspeaktibetan.png"  id="cant-speak-tibetan"></VideoJS>
+        <VideoJS src="media/banner-video.mp4"   id="cant-speak-tibetan"></VideoJS>
       </div>
-    </section>
 
-    <!-- <div class=" w-screen h-80 bg-cover bg-fixed relative bg-red-400" >
-      <div class="w-full h-full absolute flex  justify-center bg-neutral-900">
-          <div class="w-96 h-54 bg-blue-600"></div>
-          <div class="w-96 h-54 bg-white"></div>
-          <div class="w-96 h-54 bg-red-700"></div>
-          <div class="w-96 h-54 bg-green-700"></div>
-          <div class="w-96 h-54 bg-amber-400"></div>
-      </div>
-    </div> -->
+</section>
+
 </div>
 </div>
 
