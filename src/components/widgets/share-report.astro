@@ -11,20 +11,20 @@
         <!-- Book Stack Container -->
         <div class="w-full flex justify-center items-center relative h-96 ">
             <div class="book-stack relative">
-                <!-- Book 1 - Tibetan -->
+                <!-- Book 1 - Hindi-->
                 <div class="group book-item book-1 absolute transform transition-all duration-700 ease-out cursor-pointer hover:scale-105 flex justify-center items-center">
                     <a href="#" class="flex">
-                        <img src="cbs-hindi.jpg" alt="cbs-tibetan" class="w-80 h-auto shadow-2xl rounded-lg backdrop-blur-none">    
+                        <img src="cbs-hindi.jpg" alt="cbs-hindi" class="w-80 h-auto shadow-2xl rounded-lg backdrop-blur-none">    
                     </a>
-                    <h2 class="text-white text-center text-xl absolute px-6 py-3 opacity-0 bg-black group-hover:opacity-100 transition-opacity duration-300 ">Hindi</h2>
+                    <h2 class="text-white text-center text-xl absolute px-6 py-3 opacity-0 bg-black group-hover:opacity-100 transition-opacity duration-300 ">हिंदी</h2>
                 </div>
                 
-                <!-- Book 2 - English -->
+                <!-- Book 2 - Tibetan -->
                 <div class="group book-item book-2 absolute transform transition-all duration-700 ease-out cursor-pointer hover:scale-105 flex justify-center items-center">
                     <a href="#">
-                        <img src="cbs-tibetan.jpg" alt="cbs-english" class="w-80 h-auto shadow-2xl rounded-lg">
+                        <img src="cbs-tibetan.jpg" alt="cbs-tibetan" class="w-80 h-auto shadow-2xl rounded-lg">
                     </a>
-                    <h2 class="text-white text-center text-xl absolute px-6 py-3 opacity-0 bg-black group-hover:opacity-100 transition-opacity duration-300 ">Tibetan</h2>
+                    <h2 class="text-white text-center text-xl absolute px-6 py-3 opacity-0 bg-black group-hover:opacity-100 transition-opacity duration-300 ">བོད་སྐད</h2>
                 </div>
                 
                 <!-- Book 3 - English -->
@@ -114,7 +114,7 @@
                 
                 // Animate each book with more dramatic spreading
                 gsap.to(books[0], {
-                    x: progress * 550,
+                    x: progress * 400,
                     // y: progress * -100,
                      rotation: progress * 35,
                     z: progress * 100,
@@ -132,7 +132,7 @@
                 });
                 
                 gsap.to(books[2], {
-                    x: progress * -350,
+                    x: progress * -200,
                     // y: progress * -120,
                      rotation: progress * -35,
                     z: progress * 25,
