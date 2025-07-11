@@ -1,0 +1,172 @@
+---
+
+
+
+---
+
+<div class="max-w-screen mx-auto flex bg-[url('banner.jpg')] bg-cover bg-center">
+    <div class="w-full flex-col bg-neutral-900/70 items-center justify-center pb-50 px-5 pt-50">
+        
+        
+        <!-- Book Stack Container -->
+        <div class="w-full flex justify-center items-center relative h-96 ">
+            <div class="book-stack relative">
+                <!-- Book 1 - Tibetan -->
+                <div class="group book-item book-1 absolute transform transition-all duration-700 ease-out cursor-pointer hover:scale-105 flex justify-center items-center">
+                    <a href="#" class="flex">
+                        <img src="cbs-hindi.jpg" alt="cbs-tibetan" class="w-80 h-auto shadow-2xl rounded-lg backdrop-blur-none">    
+                    </a>
+                    <h2 class="text-white text-center text-xl absolute px-6 py-3 opacity-0 bg-black group-hover:opacity-100 transition-opacity duration-300 ">Hindi</h2>
+                </div>
+                
+                <!-- Book 2 - English -->
+                <div class="group book-item book-2 absolute transform transition-all duration-700 ease-out cursor-pointer hover:scale-105 flex justify-center items-center">
+                    <a href="#">
+                        <img src="cbs-tibetan.jpg" alt="cbs-english" class="w-80 h-auto shadow-2xl rounded-lg">
+                    </a>
+                    <h2 class="text-white text-center text-xl absolute px-6 py-3 opacity-0 bg-black group-hover:opacity-100 transition-opacity duration-300 ">Tibetan</h2>
+                </div>
+                
+                <!-- Book 3 - English -->
+                <div class="group book-item book-3 absolute transform transition-all duration-700 ease-out cursor-pointer hover:scale-105 flex justify-center items-center">
+                    <a href="https://s7712.pcdn.co/wp-content/uploads/2025/05/WhenTheyCametoTakeOurChildren.pdf">
+                        <img src="cbs-english.png" alt="cbs-english" class="w-80 h-auto shadow-2xl rounded-lg">
+                    </a>
+                    <h2 class="text-white text-center text-xl absolute px-6 py-3 opacity-0 bg-black group-hover:opacity-100 transition-opacity duration-300">English</h2>
+                </div>
+            </div>
+        </div>
+        <div class="w-full p-40 ">
+            <h1 class="font-Helv-Bold text-5xl text-center text-white">Share Our Reports</h1>
+
+    </div>
+</div>
+
+<style>
+    .book-stack {
+        width: 320px;
+        height: 400px;
+        position: relative;
+    }
+    
+    .book-item {
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .book-1 {
+        z-index: 3;
+        transform: translateY(0px) rotateY(0deg);
+    }
+    
+    .book-2 {
+        z-index: 2;
+        transform: translateY(15px) rotateY(8deg);
+    }
+    
+    .book-3 {
+        z-index: 1;
+        transform: translateY(30px) rotateY(15deg);
+    }
+    
+    .book-item img {
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+        transition: all 0.3s ease;
+    }
+    
+    .book-item:hover img {
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+        transform: scale(1.02);
+    }
+</style>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+        const bookStack = document.querySelector('.book-stack');
+        const books = document.querySelectorAll('.book-item');
+        
+        if (!bookStack || books.length === 0) return;
+        
+        // Initial stacked position
+        gsap.set(books, {
+            x: 90,
+            y: 0,
+            rotationY: 0,
+            z: 0
+        });
+        
+        // Create scroll trigger animation
+        ScrollTrigger.create({
+            trigger: bookStack,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: 1,
+            onUpdate: (self) => {
+                const progress = self.progress;
+                
+                // Animate each book with more dramatic spreading
+                gsap.to(books[0], {
+                    x: progress * 550,
+                    // y: progress * -100,
+                     rotation: progress * 35,
+                    z: progress * 100,
+                    scale: 1 + (progress * 0.1),
+                    duration: 0.1
+                });
+                
+                gsap.to(books[1], {
+                    x: progress * 100,
+                    // y: progress * -50,
+                    // rotationY: progress * 15,
+                    z: progress * 50,
+                    scale: 1 + (progress * 0.05),
+                    duration: 0.1
+                });
+                
+                gsap.to(books[2], {
+                    x: progress * -350,
+                    // y: progress * -120,
+                     rotation: progress * -35,
+                    z: progress * 25,
+                    scale: 1 + (progress * 0.08),
+                    duration: 0.1
+                });
+            }
+        });
+        
+        // Add hover effects
+        books.forEach((book, index) => {
+            book.addEventListener('mouseenter', () => {
+                gsap.to(book, {
+                    scale: 1.05,
+                    z: 100,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+            
+            book.addEventListener('mouseleave', () => {
+                gsap.to(book, {
+                    scale: 1,
+                    z: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+    });
+</script>
+    
+    
+
+    
+    
+    
